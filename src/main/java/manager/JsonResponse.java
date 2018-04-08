@@ -1,0 +1,39 @@
+package manager;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import model.ReturnTuple;
+
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+
+public class JsonResponse {
+    HttpServletResponse response;
+
+    public JsonResponse(HttpServletResponse resp){
+        this.response = resp;
+    }
+    public void sendResponse(ReturnTuple tuple) throws IOException {
+        JsonObject complaint = new JsonObject();
+        complaint.addProperty("result", tuple.getResponse());
+        complaint.addProperty("id", tuple.getId());
+        sendJson(complaint);
+    }
+
+    public void sendResponse(Boolean response) throws IOException {
+        JsonObject complaint = new JsonObject();
+        complaint.addProperty("result", response);
+        sendJson(complaint);
+    }
+
+    private void sendJson(JsonObject json) throws IOException {
+
+        response.setContentType("application/json");
+
+        PrintWriter out = response.getWriter();
+        out.println(json);
+        out.close();
+    }
+}
