@@ -7,8 +7,8 @@ import java.sql.*;
 
 public class DBConnection {
     enum TB_USERS{
-    id,FULLNAME;
-}
+    id,FULLNAME,USERNAME;
+    }
 
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
     private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat";
@@ -16,10 +16,6 @@ public class DBConnection {
     private Connection connection;
     private Statement statement;
     private ResultSet resultSet;
-
-    public DBConnection(){
-
-    }
 
     private void startConnection(){
         try {
@@ -35,7 +31,7 @@ public class DBConnection {
     public Boolean registerUser(User usr){
         try {
             startConnection();
-            String sqlStatement = String.format("INSERT INTO TB_USERS values (default, '%s','%s','%s','%s','%s');",usr.getUsername(),usr.getPassword(),usr.getEmail(),usr.getFirstName(),usr.getLastName());
+            String sqlStatement = String.format("INSERT INTO TB_USERS values (default, '%s','%s','%s');",usr.getFullName(),usr.getEmail(),usr.getPassword());
             statement = connection.createStatement();
             statement.executeUpdate(sqlStatement);
         } catch (SQLException e) {
@@ -51,15 +47,14 @@ public class DBConnection {
     public ReturnTuple loginAccountControl(User usr) {
         ReturnTuple values = new ReturnTuple(false, null,"");
 
-        String userID;
         try {
             startConnection();
-            String sqlStatement = String.format("Select id, CONCAT(firstName, \" \", lastName) AS FULLNAME from TB_USERS where username='%s' and password='%s';",usr.getUsername(),usr.getPassword());
+            String sqlStatement = String.format("Select id, fullName from TB_USERS where email='%s' and password='%s';",usr.getEmail(),usr.getPassword());
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlStatement);
-            values = getUserID(resultSet);
+            values = getUserData(resultSet);
             System.out.print("userID: " + values.getId());
-            System.out.print("username: " + values.getFullname());
+            System.out.print("userFullName: " + values.getFullName());
         } catch (SQLException e) {
             e.printStackTrace();
             values.setId("null");
@@ -83,12 +78,14 @@ public class DBConnection {
         return values;
     }
 
-    private ReturnTuple getUserID(ResultSet resultSet) throws Exception {
+    private ReturnTuple getUserData(ResultSet resultSet) throws Exception {
         ReturnTuple values = new ReturnTuple(false,null,"");
 
         while(resultSet.next()){
             Integer id = resultSet.getInt(TB_USERS.id.toString());
             String fullName = resultSet.getString(TB_USERS.FULLNAME.toString());
+            String username = resultSet.getString(TB_USERS.USERNAME.toString());
+
             values = new ReturnTuple(true,id.toString(),fullName);
             return values;
         }

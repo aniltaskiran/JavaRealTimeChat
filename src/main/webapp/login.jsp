@@ -1,64 +1,132 @@
-<%@ include file="/includes/header.html" %>
-<%@ page contentType="text/html; charset=UTF-8" %>
-<link rel="stylesheet" href="css/login.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%@ page contentType="text/html; charset=UTF-8" %>
 
+    <%
+        String message = "";
+
+        if ((session.getAttribute("userID") != null)){
+            response.sendRedirect("index.jsp");
+        }  else {
+
+            Boolean result = (Boolean) request.getAttribute("result");
+            String userID = (String) request.getAttribute("userID");
+            String userName = (String) request.getAttribute("userName");
+
+            if(result != null){
+                if (result){
+                    session.setAttribute("userID", userID);
+                    session.setAttribute("userName",userName);
+                    response.sendRedirect("index.jsp");
+                } else {
+                    message = "hatalı giriş";
+                }
+            }
+        }
+
+    %>
+    <h1><%=message%></h1>
+
+    <title>Login V2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="css/login/util.css">
+    <link rel="stylesheet" type="text/css" href="css/login/main.css">
+    <link rel="stylesheet" type="text/css" href="css/login/style.css">
+    <!--===============================================================================================-->
 </head>
 <body>
-<%
-    Boolean result = (Boolean) request.getAttribute("result");
-    String userID = (String) request.getAttribute("userID");
-    String userName = (String) request.getAttribute("userName");
+<!-- particles.js container -->
+<div id="particles-js"></div>
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form" method="post" action="/login">
+					<span class="login100-form-title p-b-26 unselectable">
+						Welcome
+					</span>
+                <span class="login100-form-title p-b-48">
+						<i class="zmdi zmdi-font"></i>
+					</span>
 
-   String message = "";
-    if(result != null){
-        if (result){
-            session.setAttribute("userID", userID);
-            session.setAttribute("userName",userName);
-            response.sendRedirect("index.jsp");
-        } else {
-            message = "hatalı giriş";
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
+                    <input class="input100" type="text" name="email">
+                    <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
 
-        }
-    }
-%>
-<h1><%=message%></h1>
-<div id="main">
-    <div id="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
-                    <div class="form-window">
-                        <form method="post" action="/login">
-                            <div class="form-group">
-                                <label for="usernameInput">Username</label>
-                                <input type="text" name="username" class="form-control" id="usernameInput" placeholder="Username" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="passwordInput">Password</label>
-                                <input type="password" name="password" class="form-control" id="passwordInput" placeholder="Password" required>
-                            </div>
-                            <input id="registerButton" class="btn btn-primary pull-left" type="button" value="Register"/>
-                            <button id = "login" type="submit" class="btn btn-primary pull-right">Login</button>
-                        </form>
+                <div class="wrap-input100 validate-input" data-validate="Enter password">
+						<span class="btn-show-pass">
+							<i class="zmdi zmdi-eye"></i>
+						</span>
+                    <input class="input100" type="password" name="pass">
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+
+                <div class="container-login100-form-btn">
+                    <div class="wrap-login100-form-btn">
+                        <div class="login100-form-bgbtn"></div>
+                        <button class="login100-form-btn unselectable">
+                            Login
+                        </button>
                     </div>
                 </div>
-            </div>
+
+                <div class="text-center p-t-115">
+						<span class="txt1 unselectable">
+							Don’t have an account?
+						</span>
+
+                    <a class="txt2 unselectable" href="/register.jsp">
+                        Sign Up
+                    </a>
+                </div>
+            </form>
         </div>
     </div>
 </div>
 
-<footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="/js/functions.js" charset="utf-8"></script>
 
-    <script type="text/javascript">
+<div id="dropDownSelect1"></div>
 
-        $(document).ready(function() {
-            $("img").addClass("img-responsive");
-        });
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/bootstrap/js/popper.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/daterangepicker/moment.min.js"></script>
+<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="js/login/main.js"></script>
+<!--===============================================================================================-->
+<script src="../particles.js"></script>
+<script src="js/coolBackgroundParticles.js"></script>
 
-    </script>
-</footer>
 </body>
 </html>

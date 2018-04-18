@@ -10,5 +10,5 @@ function signOut() {
 
 $("#registerButton").click(function(){
 // similar behavior as clicking on a link
-    window.location.href = "../register.jsp";
+    window.location.href = "../oldregister.jsp";
 });

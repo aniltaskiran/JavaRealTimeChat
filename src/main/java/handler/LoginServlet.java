@@ -29,13 +29,13 @@ public class LoginServlet extends HttpServlet {
             apiResponse(resp,usr);
         } else {
 
-            String username = req.getParameter("username");
-            String password = req.getParameter("password");
-            usr = new User(username, password);
+            String email = req.getParameter("email");
+            String password = req.getParameter("pass");
+            usr = new User(email, password);
             webPageResponse(resp,req,usr);
         }
-
     }
+
     public void webPageResponse(HttpServletResponse resp, HttpServletRequest req, User usr) throws ServletException, IOException {
 
         DBConnection dao = new DBConnection();
@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
             ReturnTuple result = dao.loginAccountControl(usr);
             req.setAttribute("result", result.getResponse());
             req.setAttribute("userID", result.getId());
-            req.setAttribute("userName",result.getFullname());
+            req.setAttribute("userFullName",result.getFullName());
 
             System.out.print("result id" + result.getId());
         } catch (Exception e) {

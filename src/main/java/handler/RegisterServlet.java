@@ -18,6 +18,7 @@ public class RegisterServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Gson gson = new Gson();
         User usr = gson.fromJson(req.getReader(), User.class);
+        System.out.print(usr.getEmail() + usr.getPassword() + usr.getFullName());
 
         DBConnection dao = new DBConnection();
         try {

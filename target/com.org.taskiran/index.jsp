@@ -32,7 +32,7 @@
     <div class="head-section">
         <div class="headLeft-section">
             <div class="headLeft-sub">
-                <label><%=session.getAttribute("userName")%></label>
+                <label><%=session.getAttribute("userFullName")%></label>
                 <button onclick="signOut()"><i class="fa fa-sign-out"></i></button>
             </div>
         </div>

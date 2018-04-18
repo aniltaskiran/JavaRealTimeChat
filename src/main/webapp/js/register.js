@@ -4,25 +4,21 @@ var ajaxRequest;
 $('form').on('submit', function(form) {
     form.preventDefault();
 
-    var username = $('#usernameRegisterInput').val();
     var password = $('#passwordRegisterInput').val();
     var email =    $('#emailRegisterInput').val();
-    var lastName = $('#lastNameRegisterInput').val();
-    var firstName = $('#firstNameRegisterInput').val();
+    var fullName = $('#fullNameRegisterInput').val();
 
-
-    if (username != "" && password != "" && email != "") {
+    console.log(fullName);
+    if (fullName != "" && password != "" && email != "") {
 
         var uri = "/registration";
         var json = {
-            "username": username,
-            "password": password,
-            "email": email,
-            "firstName":firstName,
-            "lastName":lastName };
+            "password": "password",
+            "email": "email",
+            "fullName":"fullName"};
 
         console.log("gönderiliyor");
-
+        console.log(json);
         ajaxRequest = $.ajax({
             url: uri,
             type: "POST",
@@ -39,7 +35,7 @@ $('form').on('submit', function(form) {
             if (response.result) {
                message = "Başarıyla kaydınız alındı.";
                 alert(message);
-                window.location.href = "../login.jsp";
+                // window.location.href = "../oldlogin.jsp";
             } else {
                 alert(message);
                 message = "Lütfen başka bir kullanıcı adı veya mail giriniz.";
