@@ -36,11 +36,30 @@
     <link rel="stylesheet" type="text/css" href="css/login/util.css">
     <link rel="stylesheet" type="text/css" href="css/login/main.css">
     <link rel="stylesheet" type="text/css" href="css/login/style.css">
+    <link rel="stylesheet" type="text/css" href="css/loader.css">
+    <link rel="stylesheet" type="text/css" href="css/dialog.css">
+
     <!--===============================================================================================-->
 </head>
 <body>
 <!-- particles.js container -->
 <div id="particles-js"></div>
+<div id="loader" style="display: none"></div>
+<div class="alert alert-success" id="alert-success" style="display: none">
+   <p style="text-align: center; font-size: large;"><strong>Success!</strong> You are redirected to login page.</p>
+</div>
+<!-- cd-popup -->
+<div class="cd-popup" role="alert">
+    <!-- cd-popup-container -->
+    <div class="cd-popup-container">
+        <p id="popup-text">Are you sure you want to delete this element?</p>
+        <ul class="cd-buttons" id="buttons">
+            <li><a href="#" id="first-button">Yes</a></li>
+            <li id="second-li"><a href="#" id="second-button">No</a></li>
+        </ul>
+        <a href="#" onclick="closePopup()" class="cd-popup-close img-replace"></a>
+    </div> <!-- cd-popup-container -->
+</div> <!-- cd-popup -->
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
@@ -52,7 +71,7 @@
 						<i class="zmdi zmdi-font"></i>
 					</span>
 
-                <div class="wrap-input100">
+                    <div class="wrap-input100 validate-input" data-validate="Enter Full Name">
                     <input class="input100" type="text" id="fullNameRegisterInput" name="fullName">
                     <span class="focus-input100" data-placeholder="Full Name"></span>
                 </div>
@@ -73,7 +92,7 @@
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button class="login100-form-btn unselectable" type="submit">
-                            Register
+                            Sign Up
                         </button>
                     </div>
                 </div>
@@ -83,7 +102,7 @@
 							Have an account?
 						</span>
 
-                    <a class="txt2 unselectable" href="/register.jsp">
+                    <a class="txt2 unselectable" href="/login.jsp">
                         Log in
                     </a>
                 </div>
@@ -114,7 +133,7 @@
 <!--===============================================================================================-->
 <script src="../particles.js"></script>
 <script src="js/coolBackgroundParticles.js"></script>
-<script src="/js/register.js" charset="utf-8"></script>
+<script src="/js/register/registerFunc.js" charset="utf-8"></script>
 
 </body>
 </html>

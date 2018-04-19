@@ -4,30 +4,34 @@
     <%@ page contentType="text/html; charset=UTF-8" %>
 
     <%
-        String message = "";
-
+        String email = "";
         if ((session.getAttribute("userID") != null)){
             response.sendRedirect("index.jsp");
         }  else {
 
             Boolean result = (Boolean) request.getAttribute("result");
             String userID = (String) request.getAttribute("userID");
-            String userName = (String) request.getAttribute("userName");
-
+            String userFullName = (String) request.getAttribute("userFullName");
+            email = (String) request.getAttribute("email");
+            if (email == null){
+                email = "";
+            }
             if(result != null){
                 if (result){
                     session.setAttribute("userID", userID);
-                    session.setAttribute("userName",userName);
+                    session.setAttribute("userFullName",userFullName);
                     response.sendRedirect("index.jsp");
                 } else {
-                    message = "hatalı giriş";
+                    %>
+                    <div class="alert alert-danger">
+                        <p style="text-align: center; font-size: large;"><strong>Danger!</strong> Indicates a dangerous or potentially negative action.</p>
+</div>
+    <%
                 }
             }
         }
 
     %>
-    <h1><%=message%></h1>
-
     <title>Login V2</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,7 +74,7 @@
 					</span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                    <input class="input100" type="text" name="email">
+                    <input class="input100" type="text" name="email" value=<%=email%>>
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 

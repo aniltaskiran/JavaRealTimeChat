@@ -44,6 +44,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("result", result.getResponse());
             req.setAttribute("userID", result.getId());
             req.setAttribute("userFullName",result.getFullName());
+            req.setAttribute("email",usr.getEmail());
 
             System.out.print("result id" + result.getId());
         } catch (Exception e) {

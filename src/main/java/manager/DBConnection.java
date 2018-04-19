@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class DBConnection {
     enum TB_USERS{
-    id,FULLNAME,USERNAME;
+    ID,FULLNAME,EMAIL;
     }
 
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
@@ -57,11 +57,11 @@ public class DBConnection {
             System.out.print("userFullName: " + values.getFullName());
         } catch (SQLException e) {
             e.printStackTrace();
-            values.setId("null");
+            values.setId(null);
             values.setResponse(false);
 
         } catch (Exception e) {
-            values.setId("null");
+            values.setId(null);
             values.setResponse(false);
             e.printStackTrace();
 
@@ -71,7 +71,7 @@ public class DBConnection {
         values.setResponse(true);
 
         if (values.getId() == null){
-            values.setId("null");
+            values.setId(null);
             values.setResponse(false);
         }
 
@@ -82,9 +82,8 @@ public class DBConnection {
         ReturnTuple values = new ReturnTuple(false,null,"");
 
         while(resultSet.next()){
-            Integer id = resultSet.getInt(TB_USERS.id.toString());
+            Integer id = resultSet.getInt(TB_USERS.ID.toString());
             String fullName = resultSet.getString(TB_USERS.FULLNAME.toString());
-            String username = resultSet.getString(TB_USERS.USERNAME.toString());
 
             values = new ReturnTuple(true,id.toString(),fullName);
             return values;
