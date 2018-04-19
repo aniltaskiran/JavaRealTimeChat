@@ -21,7 +21,7 @@
     }
 
 if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") == "")) {
-        response.sendRedirect("login.jsp");
+        response.sendRedirect("/login.jsp");
 }
 %>
 <!DOCTYPE html>

@@ -2,3 +2,5 @@
 src/main/.DS_Store
 src/main/webapp/.DS_Store
 src/main/webapp/images/.DS_Store
+target/.DS_Store
+.idea/.DS_Store

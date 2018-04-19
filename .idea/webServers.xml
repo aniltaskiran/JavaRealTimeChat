@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="76970204-c4c3-4a41-901e-5ddb5bcb3ccb" name="digitalOcean" url="http://174.138.12.182">
+        <fileTransfer host="174.138.12.182" port="22" privateKey="$USER_HOME$/.ssh/digitalOceanRoot" rootFolder="/opt/tomcat/webapps" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

@@ -19,6 +19,10 @@ public class DBConnection {
     }
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
     private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat";
+    private  String localHostUser = "root";
+    private  String localHostPassword = "";
+    private  String remoteHostUser = "kev";
+    private  String remoteHostPassword = "a8f38f726da3c612cf9dfd0a2aa686425c6919367b0bf6c2";
 
     private Connection connection;
     private Statement statement;
@@ -27,7 +31,7 @@ public class DBConnection {
     private void startConnection(){
         try {
             Class.forName(jdbcDriverStr);
-            connection = DriverManager.getConnection(jdbcURL,"root","");
+            connection = DriverManager.getConnection(jdbcURL,localHostUser,localHostPassword);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
