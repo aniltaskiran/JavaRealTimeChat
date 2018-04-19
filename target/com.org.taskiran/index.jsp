@@ -8,237 +8,371 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") == "")) {
-        response.sendRedirect("login.jsp");
-} else {
-%>
-<%--Welcome <%=session.getAttribute("userID")%>--%>
-<%--<a href='logout.jsp'>Log out</a>--%>
-<%
+    String userName = "";
+    userName = (String) session.getAttribute("userFullName");
+    if (userName == null){
+        userName = "";
     }
+
+if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") == "")) {
+        response.sendRedirect("login.jsp");
+}
 %>
+
 
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chat</title>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css" href="/css/index/index.css">
+    <script src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
-<div class="main-section">
-    <div class="head-section">
-        <div class="headLeft-section">
-            <div class="headLeft-sub">
-                <label><%=session.getAttribute("userFullName")%></label>
-                <button onclick="signOut()"><i class="fa fa-sign-out"></i></button>
+
+<div class="container app">
+    <div class="row app-one">
+        <div class="col-sm-4 side">
+            <div class="side-one">
+                <div class="row heading">
+                    <div class="col-sm-3 col-xs-3 heading-avatar">
+                        <div class="heading-avatar-icon">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+                        <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="col-sm-2 col-xs-3 heading-name">
+                        <a class="heading-name-meta" id="username"><%=userName%>
+                        </a>
+                        <span class="heading-online">Online</span>
+                    </div>
+                </div>
+
+                <div class="row searchBox">
+                    <div class="col-sm-12 searchBox-inner">
+                        <div class="form-group has-feedback">
+                            <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row sideBar">
+                    <div class="row sideBar-body">
+                        <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                            <div class="avatar-icon">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-xs-9 sideBar-main">
+                            <div class="row">
+                                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                                </div>
+                                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row sideBar-body">
+                        <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                            <div class="avatar-icon">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-xs-9 sideBar-main">
+                            <div class="row">
+                                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                                </div>
+                                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row sideBar-body">
+                        <div class="col-sm-3 col-xs-3 sideBar-avatar">
+                            <div class="avatar-icon">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png">
+                            </div>
+                        </div>
+                        <div class="col-sm-9 col-xs-9 sideBar-main">
+                            <div class="row">
+                                <div class="col-sm-8 col-xs-8 sideBar-name">
+                  <span class="name-meta">John Doe
+                </span>
+                                </div>
+                                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                  <span class="time-meta pull-right">18:18
+                </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="headRight-section">
-            <div class="headRight-sub">
-                <h3>Lajy Ion</h3>
-                <small>Lorem ipsum dolor sit amet...</small>
+
+        <div class="col-sm-8 conversation">
+            <div class="row heading">
+                <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+                    <div class="heading-avatar-icon">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                    </div>
+                </div>
+                <div class="col-sm-8 col-xs-7 heading-name">
+                    <a class="heading-name-meta">John Doe
+                    </a>
+                    <span class="heading-online">Online</span>
+                </div>
+                <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="body-section">
-        <div class="left-section mCustomScrollbar" data-mcs-theme="minimal-dark">
-            <ul>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <i class="fa fa-circle"></i>
-                            <img src="images/man01.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">05:30 am</small>
-                            <h5>Luis Yankee</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <i class="fa fa-circle"></i>
-                            <img src="images/man02.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">3 day</small>
-                            <h5>Joi Chak</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li class="active">
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man03.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">4 day</small>
-                            <h5>Lajy Ion</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man04.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">18 day</small>
-                            <h5>Lod Kine</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <i class="fa fa-circle"></i>
-                            <img src="images/man01.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">11:50 am</small>
-                            <h5>Nik Minaj</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man02.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">20 day</small>
-                            <h5>Win Sina</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man03.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">18 day</small>
-                            <h5>Jack Clerk</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man02.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">20 day</small>
-                            <h5>Win Sina</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="chatList">
-                        <div class="img">
-                            <img src="images/man03.png">
-                        </div>
-                        <div class="desc">
-                            <small class="time">18 day</small>
-                            <h5>Jack Clerk</h5>
-                            <small>Lorem ipsum dolor sit amet...</small>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-        <div class="right-section">
-            <div class="message mCustomScrollbar" data-mcs-theme="minimal-dark">
-                <ul>
-                    <li class="msg-left">
-                        <div class="msg-left-sub">
-                            <img src="images/man03.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.
+
+            <div class="row message" id="conversation">
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-receiver">
+                        <div class="receiver">
+                            <div class="message-text">
+                                Hi, what are you doing?!
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                    <li class="msg-right">
-                        <div class="msg-left-sub">
-                            <img src="images/man04.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.
+                    </div>
+                </div>
+
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                    <li class="msg-day"><small>Wednesday</small></li>
-                    <li class="msg-left">
-                        <div class="msg-left-sub">
-                            <img src="images/man03.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                Gönderilen mesaj
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                    <li class="msg-right">
-                        <div class="msg-left-sub">
-                            <img src="images/man04.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                    <li class="msg-left">
-                        <div class="msg-left-sub">
-                            <img src="images/man03.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                    <li class="msg-right">
-                        <div class="msg-left-sub">
-                            <img src="images/man04.png">
-                            <div class="msg-desc">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                tempor incididunt ut labore et dolore magna aliqua.
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
                             </div>
-                            <small>05:25 am</small>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
                         </div>
-                    </li>
-                </ul>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row message-body">
+                    <div class="col-sm-12 message-main-sender">
+                        <div class="sender">
+                            <div class="message-text">
+                                I am doing nothing man!
+                            </div>
+                            <span class="message-time pull-right">
+                Sun
+              </span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="right-section-bottom">
-                <form>
-                    <div class="upload-btn">
-                        <button class="btn"><i class="fa fa-photo"></i></button>
-                        <input type="file" name="myfile" />
-                    </div>
-                    <input type="text" name="" placeholder="type here...">
-                    <button class="btn-send"><i class="fa fa-send"></i></button>
-                </form>
+
+            <div class="row reply">
+                <div class="col-sm-1 col-xs-1 reply-emojis">
+                    <i class="fa fa-smile-o fa-2x"></i>
+                </div>
+                <div class="col-sm-9 col-xs-9 reply-main">
+                    <textarea class="form-control" rows="1" id="comment"></textarea>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-recording">
+                    <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-send">
+                    <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+                </div>
             </div>
         </div>
     </div>
 </div>
-<script src="/js/functions.js" charset="utf-8"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<!-- custom scrollbar plugin -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>
+<script src="/js/index/index.js" charset="utf-8"></script>
 </body>
 </html>
