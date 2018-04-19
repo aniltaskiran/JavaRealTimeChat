@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="JAVARealTimeChat:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="com.org.taskiran.war">
-      <element id="artifact" artifact-name="JAVARealTimeChat:war exploded" />
-    </root>
-  </artifact>
-</component>

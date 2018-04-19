@@ -1,4 +1,9 @@
-<%--
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="manager.DBConnection" %>
+<%@ page import="model.ReturnUser" %>
+<%@ page import="model.ReturnHashMap" %>
+<%@ page import="java.util.Iterator" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: kev
   Date: 8.04.2018
@@ -10,6 +15,7 @@
 <%
     String userName = "";
     userName = (String) session.getAttribute("userFullName");
+    String userID = (String) session.getAttribute("userID");
     if (userName == null){
         userName = "";
     }
@@ -18,8 +24,6 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
         response.sendRedirect("login.jsp");
 }
 %>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -37,7 +41,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
     <script src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
-
+<p id="userID" style="display: none"><%=userID%></p>
 <div class="container app">
     <div class="row app-one">
         <div class="col-sm-4 side">
@@ -45,11 +49,11 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                 <div class="row heading">
                     <div class="col-sm-3 col-xs-3 heading-avatar">
                         <div class="heading-avatar-icon">
-                            <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                            <img src="/images/profilePhoto.jpg">
                         </div>
                     </div>
                     <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
-                        <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                        <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>
                     </div>
                     <div class="col-sm-2 col-xs-3 heading-name">
                         <a class="heading-name-meta" id="username"><%=userName%>
@@ -57,76 +61,45 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                         <span class="heading-online">Online</span>
                     </div>
                 </div>
+                <div class="row sideBar" id="sideBar">
+                    <%
+                        DBConnection dao = new DBConnection();
+                        ReturnHashMap values = dao.getOnlineUsers();
 
-                <div class="row searchBox">
-                    <div class="col-sm-12 searchBox-inner">
-                        <div class="form-group has-feedback">
-                            <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
-                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row sideBar">
+                        Iterator it = values.getiDToName().entrySet().iterator();
+                        while (it.hasNext()) {
+                            Map.Entry pair = (Map.Entry)it.next();
+                            if (pair.getKey() != userID){
+                    %>
                     <div class="row sideBar-body">
                         <div class="col-sm-3 col-xs-3 sideBar-avatar">
                             <div class="avatar-icon">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                                <img src="/images/turkHack.jpg">
                             </div>
                         </div>
                         <div class="col-sm-9 col-xs-9 sideBar-main">
                             <div class="row">
                                 <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">John Doe
-                </span>
-                                </div>
-                                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">18:18
-                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                  <span class="name-meta">
 
-                    <div class="row sideBar-body">
-                        <div class="col-sm-3 col-xs-3 sideBar-avatar">
-                            <div class="avatar-icon">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png">
-                            </div>
-                        </div>
-                        <div class="col-sm-9 col-xs-9 sideBar-main">
-                            <div class="row">
-                                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">John Doe
-                </span>
-                                </div>
-                                <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">18:18
-                </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                      <%=pair.getValue()%>
 
-                    <div class="row sideBar-body">
-                        <div class="col-sm-3 col-xs-3 sideBar-avatar">
-                            <div class="avatar-icon">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar5.png">
-                            </div>
-                        </div>
-                        <div class="col-sm-9 col-xs-9 sideBar-main">
-                            <div class="row">
-                                <div class="col-sm-8 col-xs-8 sideBar-name">
-                  <span class="name-meta">John Doe
                 </span>
                                 </div>
                                 <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
-                  <span class="time-meta pull-right">18:18
+                  <span class="time-meta pull-right"><%=values.getIdToLoginTime().get(pair.getKey())%>
                 </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <%
+                            it.remove(); // avoids a ConcurrentModificationException
+                        }
+
+                        }
+                    %>
+
                 </div>
             </div>
         </div>
@@ -135,241 +108,32 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             <div class="row heading">
                 <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
                     <div class="heading-avatar-icon">
-                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                        <img src="/images/roomPhoto.jpg">
                     </div>
                 </div>
                 <div class="col-sm-8 col-xs-7 heading-name">
-                    <a class="heading-name-meta">John Doe
+                    <a class="heading-name-meta">Global Nerd Herd
                     </a>
                     <span class="heading-online">Online</span>
                 </div>
                 <div class="col-sm-1 col-xs-1  heading-dot pull-right">
-                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true" onclick="clearHistory()"></i>
                 </div>
             </div>
 
             <div class="row message" id="conversation">
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-receiver">
-                        <div class="receiver">
-                            <div class="message-text">
-                                Hi, what are you doing?!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                Gönderilen mesaj
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row message-body">
-                    <div class="col-sm-12 message-main-sender">
-                        <div class="sender">
-                            <div class="message-text">
-                                I am doing nothing man!
-                            </div>
-                            <span class="message-time pull-right">
-                Sun
-              </span>
-                        </div>
-                    </div>
-                </div>
             </div>
-
-            <div class="row reply">
-                <div class="col-sm-1 col-xs-1 reply-emojis">
-                    <i class="fa fa-smile-o fa-2x"></i>
+                <div class="row reply">
+                    <div class="col-sm-1 col-xs-1 reply-emojis">
+                        <i class="fa fa-smile-o fa-2x"></i>
+                    </div>
+                    <div class="col-sm-9 col-xs-9 reply-main">
+                        <textarea class="form-control" rows="1" id="comment"></textarea>
+                    </div>
+                    <div class="col-sm-1 col-xs-1 reply-send pull-right">
+                        <i class="fa fa-send fa-2x" aria-hidden="true" onclick="send()"></i>
+                    </div>
                 </div>
-                <div class="col-sm-9 col-xs-9 reply-main">
-                    <textarea class="form-control" rows="1" id="comment"></textarea>
-                </div>
-                <div class="col-sm-1 col-xs-1 reply-recording">
-                    <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
-                </div>
-                <div class="col-sm-1 col-xs-1 reply-send">
-                    <i class="fa fa-send fa-2x" aria-hidden="true"></i>
-                </div>
-            </div>
         </div>
     </div>
 </div>

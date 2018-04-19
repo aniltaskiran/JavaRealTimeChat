@@ -4,7 +4,7 @@ package handler;
 import com.google.gson.Gson;
 import manager.DBConnection;
 import manager.JsonResponse;
-import model.ReturnTuple;
+import model.ReturnUser;
 import model.User;
 
 import javax.servlet.RequestDispatcher;
@@ -40,7 +40,7 @@ public class LoginServlet extends HttpServlet {
 
         DBConnection dao = new DBConnection();
         try {
-            ReturnTuple result = dao.loginAccountControl(usr);
+            ReturnUser result = dao.loginAccountControl(usr);
             req.setAttribute("result", result.getResponse());
             req.setAttribute("userID", result.getId());
             req.setAttribute("userFullName",result.getFullName());

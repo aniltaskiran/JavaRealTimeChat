@@ -1,15 +1,22 @@
 package manager;
 
-import model.ReturnTuple;
+import model.ReturnHashMap;
+import model.ReturnUser;
 import model.User;
 
 import java.sql.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 
 public class DBConnection {
     enum TB_USERS{
-    ID,FULLNAME,EMAIL;
+        ID,FULLNAME,EMAIL;
     }
-
+    enum TB_ONLINE_USERS{
+        ID,FULLNAME,LOGINTIME;
+    }
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
     private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat";
 
@@ -43,9 +50,77 @@ public class DBConnection {
         }
         return true;
     }
+    public Boolean addOnlineUser(User usr){
+        DateFormat sdf = new SimpleDateFormat("HH:mm");
+        java.util.Date date = new Date();
+        System.out.println(sdf.format(date));
 
-    public ReturnTuple loginAccountControl(User usr) {
-        ReturnTuple values = new ReturnTuple(false, null,"");
+        try {
+            startConnection();
+            String sqlStatement = String.format("INSERT INTO TB_ONLINE_USERS values ('%s','%s','%s');",usr.getUserID(),usr.getFullName(),sdf.format(date).toString());
+            statement = connection.createStatement();
+            statement.executeUpdate(sqlStatement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.print(e.getMessage());
+            return false;
+        } finally{
+            close();
+        }
+        return true;
+    }
+    public Boolean removeOnlineUser(String id){
+        try {
+            startConnection();
+            String sqlStatement = String.format("DELETE FROM TB_ONLINE_USERS WHERE ID=%s;",id);
+            statement = connection.createStatement();
+            statement.executeUpdate(sqlStatement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.print(e.getMessage());
+            return false;
+        } finally{
+            close();
+        }
+        return true;
+    }
+
+    public ReturnHashMap getOnlineUsers(){
+
+        HashMap<String, String> iDToName = new HashMap<>();
+        HashMap<String, String> iDToLoginTime = new HashMap<>();
+
+        try {
+            startConnection();
+            String sqlStatement = String.format("Select * from TB_ONLINE_USERS;");
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlStatement);
+
+            while(resultSet.next()){
+                Integer id = resultSet.getInt(TB_ONLINE_USERS.ID.toString());
+                String fullName = resultSet.getString(TB_ONLINE_USERS.FULLNAME.toString());
+                String loginTime = resultSet.getString(TB_ONLINE_USERS.LOGINTIME.toString());
+                iDToName.put(id.toString(),fullName);
+                iDToLoginTime.put(id.toString(),loginTime);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+
+        } finally{
+            close();
+        }
+        ReturnHashMap values = new ReturnHashMap();
+        values.setIdToLoginTime(iDToLoginTime);
+        values.setiDToName(iDToName);
+        return values;
+    }
+
+
+    public ReturnUser loginAccountControl(User usr) {
+        ReturnUser values = new ReturnUser(false, null,"");
 
         try {
             startConnection();
@@ -78,14 +153,14 @@ public class DBConnection {
         return values;
     }
 
-    private ReturnTuple getUserData(ResultSet resultSet) throws Exception {
-        ReturnTuple values = new ReturnTuple(false,null,"");
+    private ReturnUser getUserData(ResultSet resultSet) throws Exception {
+        ReturnUser values = new ReturnUser(false,null,"");
 
         while(resultSet.next()){
             Integer id = resultSet.getInt(TB_USERS.ID.toString());
             String fullName = resultSet.getString(TB_USERS.FULLNAME.toString());
 
-            values = new ReturnTuple(true,id.toString(),fullName);
+            values = new ReturnUser(true,id.toString(),fullName);
             return values;
         }
         return values;

@@ -1,9 +1,7 @@
 package manager;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import model.ReturnTuple;
+import model.ReturnUser;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -15,7 +13,7 @@ public class JsonResponse {
     public JsonResponse(HttpServletResponse resp){
         this.response = resp;
     }
-    public void sendResponse(ReturnTuple tuple) throws IOException {
+    public void sendResponse(ReturnUser tuple) throws IOException {
         JsonObject complaint = new JsonObject();
         complaint.addProperty("result", tuple.getResponse());
         complaint.addProperty("id", tuple.getId());

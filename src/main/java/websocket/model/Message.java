@@ -2,8 +2,10 @@ package websocket.model;
 
 public class Message {
     private String from;
-    private String to;
+    private String senderID;
     private String content;
+    private String type;
+    private String loginTime;
 
     @Override
     public String toString() {
@@ -18,19 +20,35 @@ public class Message {
         this.from = from;
     }
 
-    public String getTo() {
-        return to;
-    }
-
-    public void setTo(String to) {
-        this.to = to;
-    }
-
     public String getContent() {
         return content;
     }
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public void setSenderID(String senderID) {
+        this.senderID = senderID;
+    }
+
+    public String getSenderID() {
+        return senderID;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setLoginTime(String loginTime) {
+        this.loginTime = loginTime;
+    }
+
+    public String getLoginTime() {
+        return loginTime;
     }
 }
