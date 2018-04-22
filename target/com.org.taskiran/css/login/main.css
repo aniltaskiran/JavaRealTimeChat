@@ -179,7 +179,7 @@ iframe {
 }
 
 .wrap-login100 {
-  width: 390px;
+  width: 370px;
   z-index: 0;
   background: #fff;
   border-radius: 10px;
@@ -363,7 +363,6 @@ iframe {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding-top: 13px;
 }
 
 .wrap-login100-form-btn {

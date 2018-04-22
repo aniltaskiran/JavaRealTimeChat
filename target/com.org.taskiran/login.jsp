@@ -86,7 +86,7 @@
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
-                <div class="container-login100-form-btn">
+                <div class="container-login100-form-btn p-t-113">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
                         <button class="login100-form-btn unselectable">
@@ -95,7 +95,7 @@
                     </div>
                 </div>
 
-                <div class="text-center p-t-115">
+                <div class="text-center p-t-15">
 						<span class="txt1 unselectable">
 							Don’t have an account?
 						</span>

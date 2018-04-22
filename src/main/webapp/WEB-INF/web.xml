@@ -4,6 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <servlet-class>handler.FileUploadServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FileUploadServlet</servlet-name>
+    <url-pattern>/uploadFile</url-pattern>
+  </servlet-mapping>
   <!--<servlet>-->
     <!--<servlet-name>login</servlet-name>-->
     <!--<servlet-class>handler.LoginServlet</servlet-class>-->
