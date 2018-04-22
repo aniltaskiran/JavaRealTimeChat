@@ -12,6 +12,7 @@
     <servlet-name>FileUploadServlet</servlet-name>
     <url-pattern>/uploadFile</url-pattern>
   </servlet-mapping>
+
   <!--<servlet>-->
     <!--<servlet-name>login</servlet-name>-->
     <!--<servlet-class>handler.LoginServlet</servlet-class>-->

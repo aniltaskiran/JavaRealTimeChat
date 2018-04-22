@@ -18,7 +18,7 @@
         Select file to upload:
         <input type="file" id="files" name="uploadFile" />
         <br/><br/>
-        <input type="submit" value="Upload" />
+        <input type="submit" value="Upload"/>
     </form>
     <output id="list"></output>
 </body>

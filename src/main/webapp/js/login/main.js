@@ -2,7 +2,6 @@
 (function ($) {
     "use strict";
 
-
     /*==================================================================
     [ Focus input ]*/
     $('.input100').each(function(){
@@ -87,3 +86,64 @@
 
 
 })(jQuery);
+
+
+
+var ajaxRequest;
+var didSent = false;
+function changeProfilePhoto(response) {
+    if (response.result){
+        document.getElementById("welcome-title").innerHTML = "Welcome, " + response.fullName;
+       if (!(response.path == "null" || response.path == "")){
+           document.getElementById("profile-photo").innerHTML = ['<img src="', response.path, '"/>'].join('');
+       }
+    }
+}
+
+function getProfilePhoto() {
+    console.log("pass basıldı.");
+    sendAjaxRequest();
+}
+
+function sendAjaxRequest() {
+
+    var email = $('#email').val();
+
+    if (email && !didSent) {
+        didSent = true;
+        var uri = "/getProfilePhoto";
+        var json = {
+            "email": email
+            };
+
+        console.log("gönderiliyor");
+        console.log(json);
+        ajaxRequest = $.ajax({
+            url: uri,
+            type: "POST",
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            data: JSON.stringify(json)
+        });
+
+        /* Alert the user when finished without error */
+        ajaxRequest.done(function (response, textStatus, jqXHR){
+            console.log(response);
+            console.log("done");
+            changeProfilePhoto(response);
+        });
+
+        /* If the call fails  */
+        ajaxRequest.fail(function (jqXHR, textStatus, errorThrown){
+            console.log("fail");
+        didSent = false;
+            // Log the error
+            console.error(
+                "The following error occurred: "+
+                textStatus, errorThrown
+            );
+        });
+    } else {
+        console.log("ERROR: email is: " + email);
+    }
+}

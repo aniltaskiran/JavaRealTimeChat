@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@ page contentType="text/html; charset=UTF-8" %>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
     <%
         String email = "";
@@ -57,6 +57,8 @@
     <link rel="stylesheet" type="text/css" href="css/login/util.css">
     <link rel="stylesheet" type="text/css" href="css/login/main.css">
     <link rel="stylesheet" type="text/css" href="css/login/style.css">
+    <link rel="stylesheet" type="text/css" href="css/register/register.css">
+
     <!--===============================================================================================-->
 </head>
 <body>
@@ -66,15 +68,18 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <form class="login100-form validate-form" method="post" action="/login">
-					<span class="login100-form-title p-b-26 unselectable">
+					<span class="login100-form-title p-b-26 unselectable" id="welcome-title">
 						Welcome
 					</span>
+
                 <span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
+                    <div class="heading-avatar-icon" id="profile-photo">
+                        <i class="zmdi zmdi-font"></i>
+                    </div>
+                </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                    <input class="input100" type="text" name="email" autocomplete="email" value=<%=email%>>
+                    <input class="input100" type="text" id="email" name="email" autocomplete="email" value=<%=email%>>
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
@@ -82,7 +87,7 @@
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-                    <input class="input100" type="password" name="pass" autocomplete="current_password">
+                    <input class="input100" type="password" oninput="getProfilePhoto()" name="pass" autocomplete="current_password">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 

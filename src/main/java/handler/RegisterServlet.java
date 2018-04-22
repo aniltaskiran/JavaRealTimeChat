@@ -23,10 +23,9 @@ public class RegisterServlet extends HttpServlet {
         DBConnection dao = new DBConnection();
         try {
             JsonResponse jsonResp = new JsonResponse(resp);
-            jsonResp.sendResponse(dao.registerUser(usr));
+            jsonResp.sendResponse(dao.registration(usr));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
 }

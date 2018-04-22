@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import manager.DBConnection;
+import model.ReturnFileUploadData;
+import model.User;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
@@ -24,12 +27,15 @@ public class FileUploadServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     // location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = "upload";
+    private String UPLOAD_DIRECTORY = "upload";
+            String USER_ID = "";
 
     // upload settings
     private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
     private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
     private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
+
+    private FileItem profilePhoto;
 
     /**
      * Upon receiving file upload submission, parses the request to read
@@ -42,9 +48,64 @@ public class FileUploadServlet extends HttpServlet {
             // if not, we stop here
             PrintWriter writer = response.getWriter();
             writer.println("Error: Form must has enctype=multipart/form-data.");
+            System.out.print("Error: Form must has enctype=multipart/form-data.");
             writer.flush();
             return;
         }
+
+        System.out.println("Form is correct.");
+
+        ReturnFileUploadData values = parseMultipartForm(request);
+
+        if (values.getResponse()){
+            System.out.println("parsing done.");
+
+            String path = savePhoto(values.getId(),values.getPhotoItem());
+
+            DBConnection dbConnection = new DBConnection();
+            dbConnection.savePhoto(values, path);
+            // redirects client to message page
+            getServletContext().getRequestDispatcher("/index.jsp").forward(
+                    request, response);
+        } else {
+            System.out.println("parsing failed.");
+        }
+    }
+
+    public String savePhoto(String userID, FileItem item){
+        System.out.println("save Photo");
+
+        // constructs the directory path to store upload file
+        // this path is relative to application's directory
+        String uploadPath = getServletContext().getRealPath("") + File.separator  + UPLOAD_DIRECTORY + File.separator + userID;
+
+        // creates the directory if it does not exist
+        File uploadDir = new File(uploadPath);
+        if (!uploadDir.exists()) {
+            uploadDir.mkdirs();
+            System.out.println("dir not exist. Created. " + uploadPath);
+        }
+
+        String fileName = new File(item.getName()).getName();
+        String filePath = uploadPath + File.separator + fileName;
+        File storeFile = new File(filePath);
+
+        // saves the file on disk
+        try {
+            item.write(storeFile);
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.print("There was an error: " + e.getMessage());
+            return null;
+        }
+        System.out.print("Upload has been done successfully!" + filePath);
+        return UPLOAD_DIRECTORY + File.separator + userID + File.separator + fileName;
+    }
+
+    public ReturnFileUploadData parseMultipartForm(HttpServletRequest request){
+        System.out.println("parse Multipart form");
+        ReturnFileUploadData returnValues = new ReturnFileUploadData();
+        returnValues.setResponse(true);
 
         // configures upload settings
         DiskFileItemFactory factory = new DiskFileItemFactory();
@@ -61,17 +122,6 @@ public class FileUploadServlet extends HttpServlet {
         // sets maximum size of request (include file + form data)
         upload.setSizeMax(MAX_REQUEST_SIZE);
 
-        // constructs the directory path to store upload file
-        // this path is relative to application's directory
-        String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
-
-        // creates the directory if it does not exist
-        File uploadDir = new File(uploadPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdir();
-        }
-
         try {
             // parses the request's content to extract file data
             @SuppressWarnings("unchecked")
@@ -82,25 +132,29 @@ public class FileUploadServlet extends HttpServlet {
                 for (FileItem item : formItems) {
                     // processes only fields that are not form fields
                     if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
+                        returnValues.setPhotoItem(item);
+                    } else {
+                        // Process regular form field (input type="text|radio|checkbox|etc", select, etc).
 
-                        // saves the file on disk
-                        item.write(storeFile);
-                        request.setAttribute("message",
-                                "Upload has been done successfully!" + filePath);
-                        System.out.print("Upload has been done successfully!" + filePath);
+                        String fieldName = item.getFieldName();
+                        String fieldValue = item.getString("UTF-8");
+                        if (fieldName.equals("userID")) {
+                            returnValues.setId(fieldValue);
+                            System.out.println("--------" + fieldValue);
+                        } else if (fieldName.equals("email")) {
+                            returnValues.setEmail(fieldValue);
+                            System.out.println("--------" + fieldValue);
+                        } else if (fieldName.equals("fullName")){
+                            returnValues.setFullName(fieldValue);
+                            System.out.println("--------" + fieldValue);
+                        }
                     }
                 }
             }
         } catch (Exception ex) {
+            returnValues.setResponse(false);
             System.out.print("There was an error: " + ex.getMessage());
-            request.setAttribute("message",
-                    "There was an error: " + ex.getMessage());
         }
-        // redirects client to message page
-        getServletContext().getRequestDispatcher("/message.jsp").forward(
-                request, response);
+        return returnValues;
     }
 }

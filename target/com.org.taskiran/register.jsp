@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%@ page contentType="text/html; charset=UTF-8" %>
+    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
     <%
 
@@ -38,6 +38,8 @@
     <link rel="stylesheet" type="text/css" href="css/login/style.css">
     <link rel="stylesheet" type="text/css" href="css/loader.css">
     <link rel="stylesheet" type="text/css" href="css/dialog.css">
+    <link rel="stylesheet" type="text/css" href="css/register/register.css">
+
 
     <!--===============================================================================================-->
 </head>
@@ -63,13 +65,31 @@
 <div class="limiter">
     <div class="container-login100">
         <div class="wrap-login100">
-            <form class="login100-form validate-form">
+            <form class="login100-form validate-form" id="user-form" method="post" action="uploadFile" enctype="multipart/form-data">
 					<span class="login100-form-title p-b-26 unselectable">
 						Register
 					</span>
-                <span class="login100-form-title p-b-48">
-						<i class="zmdi zmdi-font"></i>
-					</span>
+                <span class="login100-form-title p-b-45">
+					    <div class="row heading">
+                            <div class="col-sm-12 col-xs-4 heading-avatar p-b-15">
+                                <div class="heading-avatar-icon" id="profile-photo">
+                                    <i class="zmdi zmdi-font"></i>
+                                </div>
+                            </div>
+                        </div>
+                     </span>
+
+                <%--<div class="col-sm-8 col-xs-4 heading-avatar">--%>
+
+                    <%--<div class="container-login100-form-btn">--%>
+                        <%--<div class="wrap-login100-form-btn">--%>
+                            <%--<div class="addPhoto100-form-bgbtn"></div>--%>
+                            <%--<button class="login100-form-btn unselectable" type="submit">--%>
+                                <%--Sign Up--%>
+                            <%--</button>--%>
+                        <%--</div>--%>
+                    <%--</div></div>--%>
+
 
                     <div class="wrap-input100 validate-input" data-validate="Enter Full Name">
                     <input class="input100" type="text" id="fullNameRegisterInput" name="fullName">
@@ -88,10 +108,25 @@
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
+                <%--<div class="upload-btn-wrapper">--%>
+                    <%--<button class="btn">Upload a file</button>--%>
+                    <%--<input type="file" id="files" name="uploadFile"/>--%>
+                <%--</div>--%>
+                <div class="container-login100-form-btn">
+                    <div class="wrap-addPhoto100-form-btn">
+                        <div class="addPhoto100-form-bgbtn"></div>
+                        <label class="addPhoto100-form-btn unselectable">
+                            Add Profile Photo
+                            <input type="file" id="files" name="uploadFile"/>
+                        </label>
+                        <input type="submit" value="Upload" id="send-profile-photo" style="display:none;"/>
+                    </div>
+                </div>
+
                 <div class="container-login100-form-btn p-t-60">
                     <div class="wrap-login100-form-btn">
                         <div class="login100-form-bgbtn"></div>
-                        <button class="login100-form-btn unselectable" type="submit">
+                        <button class="login100-form-btn unselectable" type="button" id="submit-button">
                             Sign Up
                         </button>
                     </div>

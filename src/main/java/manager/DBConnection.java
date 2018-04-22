@@ -1,5 +1,6 @@
 package manager;
 
+import model.ReturnFileUploadData;
 import model.ReturnHashMap;
 import model.ReturnUser;
 import model.User;
@@ -11,11 +12,17 @@ import java.util.Date;
 import java.util.HashMap;
 
 public class DBConnection {
+    enum DB_TABLE_NAMES{
+        TB_USERS, TB_ONLINE_USERS, TB_PROFILE_PHOTOS;
+    }
     enum TB_USERS{
         ID,FULLNAME,EMAIL;
     }
     enum TB_ONLINE_USERS{
         ID,FULLNAME,LOGINTIME;
+    }
+    enum TB_PROFILE_PHOTOS{
+        ID,FULLNAME,PATH;
     }
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
     private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat";
@@ -39,7 +46,31 @@ public class DBConnection {
         }
     }
 
-    public Boolean registerUser(User usr){
+    public ReturnUser registration(User usr){
+        ReturnUser returnUser = new ReturnUser(false,"","");
+        if(registerUser(usr)){
+            returnUser = loginAccountControl(usr);
+        }
+        return returnUser;
+    }
+
+    public Boolean savePhoto(ReturnFileUploadData values, String path){
+        try {
+            startConnection();
+            String sqlStatement = String.format("REPLACE INTO " + DB_TABLE_NAMES.TB_PROFILE_PHOTOS.toString() +" values ('%s','%s','%s','%s');", values.getId(), values.getEmail(), values.getFullName(), path);
+            statement = connection.createStatement();
+            statement.executeUpdate(sqlStatement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.print(e.getMessage());
+            return false;
+        } finally{
+            close();
+        }
+        return true;
+    }
+
+    private Boolean registerUser(User usr){
         try {
             startConnection();
             String sqlStatement = String.format("INSERT INTO TB_USERS values (default, '%s','%s','%s');",usr.getFullName(),usr.getEmail(),usr.getPassword());
@@ -54,6 +85,7 @@ public class DBConnection {
         }
         return true;
     }
+
     public Boolean addOnlineUser(User usr){
         DateFormat sdf = new SimpleDateFormat("HH:mm");
         java.util.Date date = new Date();
@@ -87,6 +119,39 @@ public class DBConnection {
             close();
         }
         return true;
+    }
+
+    public ReturnUser getProfilePhoto(String email){
+        ReturnUser values = new ReturnUser(false, null,"","");
+
+        try {
+            startConnection();
+            String sqlStatement = String.format("Select fullName, path from TB_PROFILE_PHOTOS where email='%s';", email);
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sqlStatement);
+            values = getUserProfileData(resultSet);
+            System.out.print("path: " + values.getPath());
+            System.out.print("userFullName: " + values.getFullName());
+        } catch (SQLException e) {
+            e.printStackTrace();
+            values.setResponse(false);
+            System.out.println("ERROR: " + e.toString());
+
+        } catch (Exception e) {
+            values.setResponse(false);
+            e.printStackTrace();
+            System.out.println("ERROR: " + e.toString());
+
+        } finally{
+            close();
+        }
+        values.setResponse(true);
+
+        if (values.getPath() == null || values.getPath() == ""){
+            values.setResponse(false);
+        }
+
+        return values;
     }
 
     public ReturnHashMap getOnlineUsers(){
@@ -169,6 +234,20 @@ public class DBConnection {
         }
         return values;
     }
+
+    private ReturnUser getUserProfileData(ResultSet resultSet) throws Exception {
+        ReturnUser values = new ReturnUser(false,null,"","");
+
+        while(resultSet.next()){
+            String fullName = resultSet.getString(TB_PROFILE_PHOTOS.FULLNAME.toString());
+            String path = resultSet.getString(TB_PROFILE_PHOTOS.PATH.toString());
+
+            values.setFullName(fullName);
+            values.setPath(path);
+        }
+        return values;
+    }
+
 
 
     private void close(){

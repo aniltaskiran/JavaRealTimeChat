@@ -1,0 +1,61 @@
+
+input[type='file'] {
+    color: transparent;
+    display: none;
+}
+
+.heading {
+    padding: 10px 16px 10px 15px;
+    margin: 0;
+    height: 70px;
+    width: 100%;
+    z-index: 1000;
+}
+
+.heading-avatar {
+    padding: 0;
+    cursor: pointer;
+}
+
+.heading-avatar-icon img {
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+}
+
+
+
+.heading-name {
+    padding: 10px !important;
+    cursor: pointer;
+}
+
+.heading-name-meta {
+    font-weight: 700;
+    font-size: 100%;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: left;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    display: block;
+}
+
+
+
+@media screen and (max-width: 700px) {
+
+    .heading {
+        height: 70px;
+    }
+
+    .heading-avatar {
+        padding: 0 !important;
+    }
+
+    .heading-avatar-icon img {
+        height: 50px;
+        width: 50px;
+    }
+}

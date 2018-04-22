@@ -17,6 +17,8 @@ public class JsonResponse {
         JsonObject complaint = new JsonObject();
         complaint.addProperty("result", tuple.getResponse());
         complaint.addProperty("id", tuple.getId());
+        complaint.addProperty("path", tuple.getPath());
+        complaint.addProperty("fullName", tuple.getFullName());
         sendJson(complaint);
     }
 
