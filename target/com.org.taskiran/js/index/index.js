@@ -1,22 +1,34 @@
 
 document.addEventListener("DOMContentLoaded", function() {
     connect();
+    $(document).keypress(function(e) {
+        if(e.which == 13) {
+            // enter pressed
+            send();
+        }
+    });
+    document.querySelector('#comment').addEventListener('keypress', function (e) {
+        var value = document.getElementById("comment").value;
+        if (value == " " || value == "\n"){
+            document.getElementById("comment").value = "";
+        }
+    });
 });
 
-
-$(function(){
-    $(".heading-compose").click(function() {
-        $(".side-two").css({
-            "left": "0"
-        });
-    });
-
-    $(".newMessage-back").click(function() {
-        $(".side-two").css({
-            "left": "-100%"
-        });
-    });
-})
+//
+// $(function(){
+//     $(".heading-compose").click(function() {
+//         $(".side-two").css({
+//             "left": "0"
+//         });
+//     });
+//
+//     $(".newMessage-back").click(function() {
+//         $(".side-two").css({
+//             "left": "-100%"
+//         });
+//     });
+// })
 
 
 function addNewMessage(message){
@@ -40,6 +52,8 @@ function addNewUser(message){
     if (message.senderID == userID){
         console.log("aynı username");
     } else {
+        console.log("farklı username. senderID: " + message.senderID);
+        console.log("userID: " + userID);
         var d1 = document.getElementById('sideBar');
         var beforePhoto = '<div class="row sideBar-body" id="'+message.senderID +'"><div class="col-sm-3 col-xs-3 sideBar-avatar"><div class="avatar-icon"><img src="';
         var imageURL = '/images/turkHack.jpg';
@@ -75,16 +89,10 @@ function findPos(obj) {
 var ws;
 
 function connect() {
-    document.querySelector('#comment').addEventListener('keypress', function (e) {
-        var key = e.which || e.keyCode;
-        if (key === 13) { // 13 is enter
-            console.log("dedda");
-            // code for enter
-            send();
-        }
-    });
-    console.log("bağlandı.");
-    var username = document.getElementById("username").text;
+
+    console.log("bağlantı ayarlanıyor.");
+    var username = document.getElementById("username").innerHTML;
+    console.log("username is: " + username);
 
     var host = document.location.host;
     var pathname = document.location.pathname;
@@ -113,7 +121,7 @@ function send() {
     var content = document.getElementById("comment").value;
     var userID  = document.getElementById("userID").innerHTML;
 
-    if (content != ""){
+    if (content != "" && content != "\n" && content != " " ){
         var json = JSON.stringify({
             "content":content,
             "senderID":userID,
@@ -155,6 +163,10 @@ function waitForSocketConnection(socket, callback){
             }
 
         }, 5); // wait 5 milisecond for the connection...
+}
+
+function sendEmoji() {
+    document.getElementById("comment").value += "😂";
 }
 
 function signOut() {

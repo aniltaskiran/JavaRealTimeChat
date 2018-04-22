@@ -22,12 +22,17 @@
 
 if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") == "")) {
         response.sendRedirect("/login.jsp");
+        return;
+} else {
+    userID = userID.trim();
 }
 %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chat</title>
+    <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -36,9 +41,11 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/index/index.css">
-    <script src="jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <p id="userID" style="display: none"><%=userID%></p>
@@ -48,7 +55,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             <div class="side-one">
                 <div class="row heading">
                     <div class="col-sm-3 col-xs-3 heading-avatar">
-                        <div class="heading-avatar-icon">
+                        <div class="avatar-icon">
                             <img src="/images/profilePhoto.jpg">
                         </div>
                     </div>
@@ -56,12 +63,18 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                         <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>
                     </div>
                     <div class="col-sm-2 col-xs-3 heading-name">
-                        <a class="heading-name-meta" id="username"><%=userName%>
-                        </a>
+                        <p class="heading-name-meta" id="username"><%=userName%>
+                        </p>
                         <span class="heading-online">Online</span>
                     </div>
                 </div>
                 <div class="row sideBar" id="sideBar">
+                    <div class="row heading-online-users">
+                        <div class="heading-name-online-users">
+                            <p class="heading-name-meta-online-users">Çevrimiçi Kişiler</p>
+                            <span class="heading-online">Online</span>
+                        </div>
+                    </div>
                     <%
                         DBConnection dao = new DBConnection();
                         ReturnHashMap values = dao.getOnlineUsers();
@@ -69,9 +82,12 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                         Iterator it = values.getiDToName().entrySet().iterator();
                         while (it.hasNext()) {
                             Map.Entry pair = (Map.Entry)it.next();
-                            if (pair.getKey() != userID){
+
+                            if (!pair.getKey().toString().contains(userID)){
+                                System.out.println("userID: " + userID + "as");
+                                System.out.println("pairKey:" + pair.getKey() + "as");
                     %>
-                    <div class="row sideBar-body">
+                    <div class="row sideBar-body" id="pairKey_<%=pair.getKey()%>">
                         <div class="col-sm-3 col-xs-3 sideBar-avatar">
                             <div class="avatar-icon">
                                 <img src="/images/turkHack.jpg">
@@ -107,7 +123,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
         <div class="col-sm-8 conversation">
             <div class="row heading">
                 <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
-                    <div class="heading-avatar-icon">
+                    <div class="avatar-icon">
                         <img src="/images/roomPhoto.jpg">
                     </div>
                 </div>
@@ -124,14 +140,14 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             <div class="row message" id="conversation">
             </div>
                 <div class="row reply">
-                    <div class="col-sm-1 col-xs-1 reply-emojis">
+                    <div class="col-sm-1 col-xs-1  reply-emojis" onclick="sendEmoji()">
                         <i class="fa fa-smile-o fa-2x"></i>
                     </div>
-                    <div class="col-sm-9 col-xs-9 reply-main">
+                    <div class="col-sm-10 col-xs-10 reply-main">
                         <textarea class="form-control" rows="1" id="comment"></textarea>
                     </div>
                     <div class="col-sm-1 col-xs-1 reply-send pull-right">
-                        <i class="fa fa-send fa-2x" aria-hidden="true" onclick="send()"></i>
+                        <i class="fa fa-send fa-2x pull-right" aria-hidden="true" onclick="send()"></i>
                     </div>
                 </div>
         </div>

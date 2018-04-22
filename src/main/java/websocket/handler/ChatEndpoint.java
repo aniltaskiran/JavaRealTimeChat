@@ -39,6 +39,7 @@ public class ChatEndpoint {
         this.session = session;
         chatEndpoints.add(this);
         users.put(session.getId(), username);
+        System.out.print("username is: " + username);
 
         Message message = new Message();
         broadcast(message);

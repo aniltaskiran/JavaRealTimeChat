@@ -23,8 +23,10 @@ body {
 .app {
     position: relative;
     overflow: hidden;
-    top: 19px;
-    height: calc(100% - 38px);
+    /* top: 19px; */
+    height: 100%;
+    width: 100%;
+    /* height: calc(100% - 38px); */
     margin: auto;
     padding: 0;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .06), 0 2px 5px 0 rgba(0, 0, 0, .2);
@@ -33,6 +35,7 @@ body {
 .app-one {
     background-color: #f7f7f7;
     height: 100%;
+    width: 100%;
     overflow: hidden;
     margin: 0;
     padding: 0;
@@ -73,7 +76,7 @@ body {
 .heading {
     padding: 10px 16px 10px 15px;
     margin: 0;
-    height: 60px;
+    height: 70px;
     width: 100%;
     background-color: #eee;
     z-index: 1000;
@@ -91,8 +94,10 @@ body {
     width: 40px;
 }
 
+
+
 .heading-name {
-    padding: 0 !important;
+    padding: 10px !important;
     cursor: pointer;
 }
 
@@ -113,6 +118,35 @@ body {
     font-size: 12px;
     color: #93918f;
 }
+/*New Row*/
+
+.heading-online-users {
+    padding: 10px 16px 10px 15px;
+    margin: 0;
+    height: 45px;
+    width: 100%;
+    /*background-color: #fbfbfb;*/
+    z-index: 1000;
+    border-bottom: 1px solid #f7f7f7;
+}
+
+.heading-name-online-users {
+    padding: 0 !important;
+    cursor: pointer;
+}
+
+.heading-name-meta-online-users {
+    font-weight: 700;
+    font-size: 100%;
+    padding: 5px;
+    padding-bottom: 0;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #000;
+    display: block;
+}
+/**/
 .heading-compose {
     padding: 0;
 }
@@ -125,7 +159,7 @@ body {
 }
 
 .heading-dot {
-    padding: 0;
+    padding: 10px;
     margin-left: 10px;
 }
 
@@ -166,7 +200,7 @@ body {
     margin: 0 !important;
     background-color: #fff;
     overflow-y: auto;
-    border: 1px solid #f7f7f7;
+    /*border: 1px solid #f7f7f7;*/
     height: calc(100% - 120px);
 }
 
@@ -315,10 +349,10 @@ body {
 .message {
     padding: 0 !important;
     margin: 0 !important;
-    background: url("w.jpg") no-repeat fixed center;
+    background: url("../../images/chatBackground.jpg") no-repeat center;
     background-size: cover;
     overflow-y: auto;
-    border: 1px solid #f7f7f7;
+    /*border: 1px solid #f7f7f7;*/
     height: calc(100% - 120px);
 }
 
@@ -331,12 +365,12 @@ body {
 }
 
 .message-main-receiver {
-    /*padding: 10px 20px;*/
+    padding: 5px 20px !important;
     max-width: 60%;
 }
 
 .message-main-sender {
-    padding: 3px 20px !important;
+    padding: 5px 20px !important;
     margin-left: 40% !important;
     max-width: 60%;
 }
@@ -400,9 +434,12 @@ body {
 
 .reply-emojis i {
     text-align: center;
-    padding: 5px 5px 5px 5px !important;
+    padding: 0px 5px 5px 5px !important;
     color: #93918f;
     cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .reply-recording {
@@ -422,13 +459,14 @@ body {
 
 .reply-send i {
     text-align: center;
-    padding: 5px !important;
+    padding: 0px 15px 15px 10px !important;
     color: #93918f;
     cursor: pointer;
 }
 
 .reply-main {
     padding: 2px 5px !important;
+    padding-bottom: 10px !important;
 }
 
 .reply-main textarea {
@@ -458,7 +496,7 @@ body {
     }
     .heading {
         height: 70px;
-        background-color: #009688;
+        background-color: #f7f7f7;
     }
     .fa-2x {
         font-size: 2.3em !important;
@@ -529,7 +567,7 @@ body {
         margin: 0 !important;
         height: 100%;
         /*width: 100%;*/
-        border-left: 1px solid rgba(0, 0, 0, .08);
+        border-left: 1px solid rgba(0, 0, 0, .03);
         /*overflow-y: auto;*/
     }
     .message {
@@ -544,13 +582,17 @@ body {
     .reply-emojis i {
         padding: 5px 2px !important;
         font-size: 1.8em !important;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
     .reply-main {
         padding: 2px 8px !important;
     }
     .reply-main textarea {
         padding: 8px !important;
-        font-size: 18px;
+        font-size: 100%;
+        font-weight: 600;
     }
     .reply-recording {
         padding: 5px 0 !important;
@@ -560,7 +602,7 @@ body {
         font-size: 1.8em !important;
     }
     .reply-send {
-        padding: 5px 0 !important;
+        padding: 5px 20px 20px 20px !important;
     }
     .reply-send i {
         padding: 5px 2px 5px 0 !important;
