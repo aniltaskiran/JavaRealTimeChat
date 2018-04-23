@@ -32,8 +32,11 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 <html>
 <head>
     <title>Chat</title>
+    <script type="text/javascript" src="version?n=<%=Math.random()*100 + 1%>"></script>
+
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
@@ -53,7 +56,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 <p id="userID" style="display: none"><%=userID%></p>
 <div class="container app">
     <div class="row app-one">
-        <div class="col-sm-4 hidden-sm side">
+        <div class="col-md-4 col-lg-4 hidden-sm hidden-xs side">
             <div class="side-one">
                 <div class="row heading">
                     <div class="col-sm-2 col-xs-3 heading-avatar">
@@ -63,7 +66,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                             ReturnUser returnUser = dbConnection.getProfilePhoto(userMail);
                             String path = returnUser.getPath();
                             %>
-                            <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/profilePhoto.jpg';">
+                            <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/default-avatar.svg';">
 
                         </div>
                     </div>
@@ -132,34 +135,33 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             </div>
         </div>
 
-        <div class="col-sm-8 col-xs-12 conversation" id="rightMenu">
+        <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12 conversation" id="rightMenu">
             <div class="row heading">
-                <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+                <div class="col-sm-2 col-md-2 col-xs-3 heading-avatar">
                     <div class="avatar-icon">
                         <img src="/images/roomPhoto.png">
                     </div>
                 </div>
-                <div class="col-sm-8 col-xs-7 heading-name">
+                <div class="col-sm-6 col-md-7 col-xs-6 heading-name">
                     <a class="heading-name-meta">Global Nerd Herd
                     </a>
                     <span class="heading-online">Online</span>
                 </div>
-                <div class="col-sm-2 col-xs-1  heading-dot pull-right">
-                    <i class="fa fa-trash-o fa-2x  pull-right" aria-hidden="true" onclick="clearHistory()"></i>
-                </div>
+                <div class="col-sm-1 col-md-1 col-xs-2 heading-dot pull-right" id="rightMenuButton">
+                    <i class="fa fa-sign-out fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>;                </div>
             </div>
 
             <div class="row message" id="conversation">
             </div>
                 <div class="row reply">
-                    <div class="col-sm-1 col-xs-1  reply-emojis" onclick="sendEmoji()">
+                    <div class="col-sm-1 col-xs-2  reply-emojis" onclick="sendEmoji()">
                         <i class="fa fa-smile-o fa-2x"></i>
                     </div>
-                    <div class="col-sm-10 col-xs-10 reply-main">
+                    <div class="col-sm-10 col-xs-8 reply-main">
                         <textarea class="form-control" rows="1" id="comment"></textarea>
                     </div>
-                    <div class="col-sm-1 col-xs-1 reply-send pull-right">
-                        <i class="fa fa-send fa-2x pull-right" aria-hidden="true" onclick="send()"></i>
+                    <div class="col-sm-1 col-xs-2 reply-send pull-right" onclick="send()">
+                        <i class="fa fa-send fa-2x pull-right" aria-hidden="true"></i>
                     </div>
                 </div>
         </div>

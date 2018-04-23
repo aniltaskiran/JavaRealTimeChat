@@ -13,6 +13,7 @@ public class JsonResponse {
     public JsonResponse(HttpServletResponse resp){
         this.response = resp;
     }
+
     public void sendResponse(ReturnUser tuple) throws IOException {
         JsonObject complaint = new JsonObject();
         complaint.addProperty("result", tuple.getResponse());

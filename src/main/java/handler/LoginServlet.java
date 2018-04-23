@@ -45,6 +45,8 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("userFullName",result.getFullName());
             req.setAttribute("email",usr.getEmail());
 
+            dao.saveIPAddr(req.getRemoteAddr(),result.getId());
+
             System.out.println("\nemail " + usr.getEmail());
         } catch (Exception e) {
             e.printStackTrace();

@@ -54,7 +54,11 @@ public class ChatEndpoint {
 
             DateFormat sdf = new SimpleDateFormat("HH:mm");
             Date date = new Date();
-            System.out.println(sdf.format(date));
+
+            final long hoursInMillis = 60L * 60L * 1000L;
+            date.setTime(2L * hoursInMillis);
+
+            System.out.println("Date is: " + sdf.format(date));
 
             message.setLoginTime(sdf.format(date));
             User usr = new User(Integer.parseInt(message.getSenderID()),message.getFrom());

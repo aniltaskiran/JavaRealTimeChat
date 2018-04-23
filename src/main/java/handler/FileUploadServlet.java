@@ -73,6 +73,9 @@ public class FileUploadServlet extends HttpServlet {
     }
 
     public String savePhoto(String userID, FileItem item){
+        if (item == null){
+            return "there is no photo";
+        }
         System.out.println("save Photo");
 
         // constructs the directory path to store upload file

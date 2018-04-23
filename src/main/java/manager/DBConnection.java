@@ -13,7 +13,7 @@ import java.util.HashMap;
 
 public class DBConnection {
     enum DB_TABLE_NAMES{
-        TB_USERS, TB_ONLINE_USERS, TB_PROFILE_PHOTOS;
+        TB_USERS, TB_ONLINE_USERS, TB_PROFILE_PHOTOS,TB_IP_ADDR;
     }
     enum TB_USERS{
         ID,FULLNAME,EMAIL;
@@ -24,6 +24,7 @@ public class DBConnection {
     enum TB_PROFILE_PHOTOS{
         ID,FULLNAME,PATH;
     }
+
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
     private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat?useUnicode=true&characterEncoding=UTF-8";
     private  String localHostUser = "root";
@@ -52,6 +53,20 @@ public class DBConnection {
             returnUser = loginAccountControl(usr);
         }
         return returnUser;
+    }
+
+    public void saveIPAddr(String ip, String id){
+        try {
+            startConnection();
+            String sqlStatement = String.format("INSERT INTO " + DB_TABLE_NAMES.TB_IP_ADDR.toString() +" values ('%s','%s',NOW());", id,ip);
+            statement = connection.createStatement();
+            statement.executeUpdate(sqlStatement);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.print(e.getMessage());
+        } finally{
+            close();
+        }
     }
 
     public Boolean savePhoto(ReturnFileUploadData values, String path){

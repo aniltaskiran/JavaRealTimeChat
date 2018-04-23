@@ -35,6 +35,7 @@
     %>
     <title>Login V2</title>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="version?n=<%=Math.random()*100 + 1%>"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--===============================================================================================-->
     <link rel="icon" type="image/png" href="images/icons/favicon.ico"/>

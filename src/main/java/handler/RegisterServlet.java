@@ -3,6 +3,7 @@ package handler;
 import com.google.gson.Gson;
 import manager.DBConnection;
 import manager.JsonResponse;
+import model.ReturnUser;
 import model.User;
 
 import javax.servlet.ServletException;
@@ -20,10 +21,15 @@ public class RegisterServlet extends HttpServlet {
         User usr = gson.fromJson(req.getReader(), User.class);
         System.out.print(usr.getEmail() + usr.getPassword() + usr.getFullName());
 
+        String ip = req.getRemoteAddr();
+
+
         DBConnection dao = new DBConnection();
         try {
             JsonResponse jsonResp = new JsonResponse(resp);
-            jsonResp.sendResponse(dao.registration(usr));
+            ReturnUser returnUser = dao.registration(usr);
+            dao.saveIPAddr(ip,returnUser.getId());
+            jsonResp.sendResponse(returnUser);
         } catch (Exception e) {
             e.printStackTrace();
         }

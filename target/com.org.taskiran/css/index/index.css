@@ -71,7 +71,7 @@ span {
 .heading {
     padding: 10px 16px 10px 15px;
     margin: 0;
-    height: 70px;
+    height: 75px;
     width: 100%;
     background-color: #eee;
     z-index: 1000;
@@ -490,7 +490,7 @@ span {
         height: 100%;
     }
     .heading {
-        height: 70px;
+        height: 75px;
         background-color: #f7f7f7;
     }
     .fa-2x {
@@ -515,7 +515,7 @@ span {
         margin-left: 10px !important;
     }
     .heading-dot i {
-        color: #fff;
+        color: #6d6e71;
         cursor: pointer;
     }
     .sideBar {

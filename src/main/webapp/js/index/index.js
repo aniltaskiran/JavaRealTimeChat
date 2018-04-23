@@ -31,12 +31,16 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function changeMobile(isMobile){
+
     var NAME = document.getElementById("rightMenu");
+    var rightButton = document.getElementById("rightMenuButton");
     var currentClass = NAME.className;
     console.log(currentClass);
     if (isMobile) {
+        rightButton.innerHTML = '<i class="fa fa-sign-out fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>';
         NAME.className = "col-sm-12 col-xs-12 conversation";   // Set other class name
     } else {
+        rightButton.innerHTML = '<i class="fa fa-trash-o fa-2x  pull-right" aria-hidden="true" onclick="clearHistory()"></i>';
         NAME.className = "col-sm-8 col-xs-12 conversation";   // Set other class name
     }
 }
