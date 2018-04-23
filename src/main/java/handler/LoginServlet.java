@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "login", urlPatterns = {"/login"})
+//@WebServlet(name = "login", urlPatterns = {"/login"})
 
 public class LoginServlet extends HttpServlet {
     @Override
@@ -28,7 +28,6 @@ public class LoginServlet extends HttpServlet {
             usr = gson.fromJson(req.getReader(), User.class);
             apiResponse(resp,usr);
         } else {
-
             String email = req.getParameter("email");
             String password = req.getParameter("pass");
             usr = new User(email, password);
@@ -46,7 +45,7 @@ public class LoginServlet extends HttpServlet {
             req.setAttribute("userFullName",result.getFullName());
             req.setAttribute("email",usr.getEmail());
 
-            System.out.print("result id" + result.getId());
+            System.out.println("\nemail " + usr.getEmail());
         } catch (Exception e) {
             e.printStackTrace();
         }

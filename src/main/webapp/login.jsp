@@ -20,6 +20,7 @@
                 if (result){
                     session.setAttribute("userID", userID);
                     session.setAttribute("userFullName",userFullName);
+                    session.setAttribute("email",email);
                     response.sendRedirect("index.jsp");
                 } else {
                     %>
@@ -105,7 +106,7 @@
 							Don’t have an account?
 						</span>
 
-                    <a class="txt2 unselectable" href="/register.jsp">
+                    <a class="txt2 unselectable" href="/register.jsp" style="z-index: 2">
                         Sign Up
                     </a>
                 </div>

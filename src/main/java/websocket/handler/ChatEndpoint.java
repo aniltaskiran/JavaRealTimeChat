@@ -2,6 +2,7 @@ package websocket.handler;
 
 
 import manager.DBConnection;
+import model.ReturnUser;
 import model.User;
 import websocket.model.Message;
 
@@ -50,6 +51,7 @@ public class ChatEndpoint {
         message.setFrom(users.get(session.getId()));
         String type = (String) message.getType();
         if (type.equals("addNewUser")){
+
             DateFormat sdf = new SimpleDateFormat("HH:mm");
             Date date = new Date();
             System.out.println(sdf.format(date));
@@ -58,6 +60,7 @@ public class ChatEndpoint {
             User usr = new User(Integer.parseInt(message.getSenderID()),message.getFrom());
             addOnlineUser(usr);
             userToUserID.put(session.getId(), (String.valueOf(usr.getUserID())));
+            message.setPath(getProfilePhoto(message.getSenderID()).getPath());
         }
         broadcast(message);
     }
@@ -69,6 +72,10 @@ public class ChatEndpoint {
     public void removeOnlineUser(Session session){
         DBConnection dao = new DBConnection();
         dao.removeOnlineUser(userToUserID.get(session.getId()));
+    }
+    public ReturnUser getProfilePhoto(String userID){
+        DBConnection dao = new DBConnection();
+        return dao.getProfilePhotoWithUserID(userID);
     }
 
     @OnClose

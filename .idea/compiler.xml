@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="com.org.taskiran" target="1.9" />
+      <module name="com.org.taskiran" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

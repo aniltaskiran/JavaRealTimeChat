@@ -56,7 +56,15 @@ function addNewUser(message){
         console.log("userID: " + userID);
         var d1 = document.getElementById('sideBar');
         var beforePhoto = '<div class="row sideBar-body" id="'+message.senderID +'"><div class="col-sm-3 col-xs-3 sideBar-avatar"><div class="avatar-icon"><img src="';
-        var imageURL = '/images/turkHack.jpg';
+        var imageURL = "";
+        if (message.path === "null"){
+            imageURL = "/images/turkHack.jpg";
+            console.log("null geldi.");
+        } else {
+            console.log("null gelmedi. " + message.path);
+            imageURL = message.path;
+        }
+
         var afterPhoto = '"></div></div><div class="col-sm-9 col-xs-9 sideBar-main"><div class="row"><div class="col-sm-8 col-xs-8 sideBar-name"><span class="name-meta">';
         var afterUserName = '</span></div><div class="col-sm-4 col-xs-4 pull-right sideBar-time"><span class="time-meta pull-right">';
         var afterTime = '</span></div></div></div></div>';

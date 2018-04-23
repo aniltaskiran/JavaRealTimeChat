@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(name = "GetProfilePhoto", urlPatterns = {"/getProfilePhoto"})
+//@WebServlet(name = "GetProfilePhoto", urlPatterns = {"/getProfilePhoto"})
 
 public class GetProfilePhotoServlet extends HttpServlet {
     @Override

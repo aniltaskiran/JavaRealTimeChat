@@ -7,48 +7,65 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c03ecdf-7330-47e0-bd3a-36617523175d" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnFileUploadData.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/css/register/register.css" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/com_org_taskiran_war.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/com_org_taskiran_war.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java" afterPath="$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java" />
+      <change beforePath="$PROJECT_DIR$/com.org.taskiran.iml" afterPath="$PROJECT_DIR$/com.org.taskiran.iml" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java" afterPath="$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/handler/LoginServlet.java" afterPath="$PROJECT_DIR$/src/main/java/handler/LoginServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java" afterPath="$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/manager/DBConnection.java" afterPath="$PROJECT_DIR$/src/main/java/manager/DBConnection.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/manager/JsonResponse.java" afterPath="$PROJECT_DIR$/src/main/java/manager/JsonResponse.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/ReturnUser.java" afterPath="$PROJECT_DIR$/src/main/java/model/ReturnUser.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java" afterPath="$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/websocket/model/Message.java" afterPath="$PROJECT_DIR$/src/main/java/websocket/model/Message.java" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/css/login/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/login/main.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/css/register/main.css" afterPath="$PROJECT_DIR$/src/main/webapp/css/register/main.css" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/login/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/login/main.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/register/main.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/register/main.js" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/register/registerFunc.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/register/registerFunc.js" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/js/index/index.js" afterPath="$PROJECT_DIR$/src/main/webapp/js/index/index.js" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/register.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/uploadImage.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/uploadImage.jsp" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/FileUploadServlet.class" afterPath="$PROJECT_DIR$/target/classes/handler/FileUploadServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/GetProfilePhotoServlet.class" afterPath="$PROJECT_DIR$/target/classes/handler/GetProfilePhotoServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/handler/LoginServlet.class" afterPath="$PROJECT_DIR$/target/classes/handler/LoginServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/handler/RegisterServlet.class" afterPath="$PROJECT_DIR$/target/classes/handler/RegisterServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/manager/DBConnection$DB_TABLE_NAMES.class" afterPath="$PROJECT_DIR$/target/classes/manager/DBConnection$DB_TABLE_NAMES.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_ONLINE_USERS.class" afterPath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_ONLINE_USERS.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_PROFILE_PHOTOS.class" afterPath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_PROFILE_PHOTOS.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_USERS.class" afterPath="$PROJECT_DIR$/target/classes/manager/DBConnection$TB_USERS.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/manager/DBConnection.class" afterPath="$PROJECT_DIR$/target/classes/manager/DBConnection.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/manager/JsonResponse.class" afterPath="$PROJECT_DIR$/target/classes/manager/JsonResponse.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ReturnFileUploadData.class" afterPath="$PROJECT_DIR$/target/classes/model/ReturnFileUploadData.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/ReturnHashMap.class" afterPath="$PROJECT_DIR$/target/classes/model/ReturnHashMap.class" />
       <change beforePath="$PROJECT_DIR$/target/classes/model/ReturnUser.class" afterPath="$PROJECT_DIR$/target/classes/model/ReturnUser.class" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran.war" afterPath="$PROJECT_DIR$/target/com.org.taskiran.war" />
+      <change beforePath="$PROJECT_DIR$/target/classes/model/User.class" afterPath="$PROJECT_DIR$/target/classes/model/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/handler/ChatEndpoint.class" afterPath="$PROJECT_DIR$/target/classes/websocket/handler/ChatEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/handler/MessageDecoder.class" afterPath="$PROJECT_DIR$/target/classes/websocket/handler/MessageDecoder.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/handler/MessageEncoder.class" afterPath="$PROJECT_DIR$/target/classes/websocket/handler/MessageEncoder.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/websocket/model/Message.class" afterPath="$PROJECT_DIR$/target/classes/websocket/model/Message.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran.war" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/com.org.taskiran/META-INF/MANIFEST.MF" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/FileUploadServlet.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/FileUploadServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/GetProfilePhotoServlet.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/GetProfilePhotoServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/LoginServlet.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/LoginServlet.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/RegisterServlet.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/handler/RegisterServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$DB_TABLE_NAMES.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$DB_TABLE_NAMES.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_ONLINE_USERS.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_ONLINE_USERS.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_PROFILE_PHOTOS.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_PROFILE_PHOTOS.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_USERS.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection$TB_USERS.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/DBConnection.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/JsonResponse.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/manager/JsonResponse.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnFileUploadData.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnFileUploadData.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnHashMap.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnHashMap.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnUser.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/ReturnUser.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/User.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/model/User.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/ChatEndpoint.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/ChatEndpoint.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/MessageDecoder.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/MessageDecoder.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/MessageEncoder.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/handler/MessageEncoder.class" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/model/Message.class" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/classes/websocket/model/Message.class" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/target/com.org.taskiran/WEB-INF/web.xml" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/css/login/main.css" afterPath="$PROJECT_DIR$/target/com.org.taskiran/css/login/main.css" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/css/register/main.css" afterPath="$PROJECT_DIR$/target/com.org.taskiran/css/register/main.css" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/js/login/main.js" afterPath="$PROJECT_DIR$/target/com.org.taskiran/js/login/main.js" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/js/register/main.js" afterPath="$PROJECT_DIR$/target/com.org.taskiran/js/register/main.js" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/js/register/registerFunc.js" afterPath="$PROJECT_DIR$/target/com.org.taskiran/js/register/registerFunc.js" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/index.jsp" afterPath="$PROJECT_DIR$/target/com.org.taskiran/index.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/js/index/index.js" afterPath="$PROJECT_DIR$/target/com.org.taskiran/js/index/index.js" />
       <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/login.jsp" afterPath="$PROJECT_DIR$/target/com.org.taskiran/login.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/register.jsp" afterPath="$PROJECT_DIR$/target/com.org.taskiran/register.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/com.org.taskiran/uploadImage.jsp" afterPath="$PROJECT_DIR$/target/com.org.taskiran/uploadImage.jsp" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -63,28 +80,18 @@
       <file leaf-file-name="RegisterServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+            <state relative-caret-position="154">
+              <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="FileUploadServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java">
+      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login/main.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="registerFunc.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/register/registerFunc.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="13" column="3" lean-forward="false" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+            <state relative-caret-position="225">
+              <caret line="184" column="22" lean-forward="false" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -93,29 +100,11 @@
       <file leaf-file-name="login.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="138" column="24" lean-forward="false" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="register.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/register.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1026">
-              <caret line="162" column="17" lean-forward="false" selection-start-line="162" selection-start-column="17" selection-end-line="162" selection-end-column="17" />
-              <folding />
+            <state relative-caret-position="171">
+              <caret line="109" column="31" lean-forward="false" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -123,28 +112,18 @@
       <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+            <state relative-caret-position="283">
+              <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/handler/LoginServlet.java">
+      <file leaf-file-name="FileUploadServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/manager/DBConnection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2926">
-              <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
+            <state relative-caret-position="550">
+              <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -153,9 +132,52 @@
       <file leaf-file-name="GetProfilePhotoServlet.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+            <state relative-caret-position="132">
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/handler/LoginServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="163">
+              <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DBConnection.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/manager/DBConnection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="199" column="22" lean-forward="false" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="JsonResponse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/manager/JsonResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+              <folding>
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#331#332#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -173,13 +195,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>fa fa-send fa-2x</find>
-      <find>avatar-</find>
-      <find>userNa</find>
-      <find>p-t-115</find>
-      <find>wrap-</find>
-      <find>.wrap-login100</find>
-      <find>container-log</find>
       <find>container</find>
       <find>container-login100-form-bt</find>
       <find>document</find>
@@ -203,6 +218,13 @@
       <find>profile</find>
       <find>email</find>
       <find>jque</find>
+      <find>result id</find>
+      <find>addNew</find>
+      <find>addNewUser</find>
+      <find>dbConnec</find>
+      <find>DBConnection</find>
+      <find>user</find>
+      <find>.wrap-login</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -216,34 +238,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/websocket/model/Message.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ReturnHashMap.java" />
-        <option value="$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/index/index.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/FileUploadServlet.jsp" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/message.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/register/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/index/index.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/css/register/register.css" />
-        <option value="$PROJECT_DIR$/src/main/webapp/css/login/main.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/uploadImage.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/handler/LoginServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ReturnUser.java" />
         <option value="$PROJECT_DIR$/src/main/java/model/ReturnFileUploadData.java" />
         <option value="$PROJECT_DIR$/src/main/java/manager/JsonResponse.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/register/main.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/register/registerFunc.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/manager/DBConnection.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/js/login/main.js" />
+        <option value="$PROJECT_DIR$/src/main/java/manager/DBConnection.java" />
+        <option value="$PROJECT_DIR$/src/main/java/websocket/model/Message.java" />
+        <option value="$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/js/index/index.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/login.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/handler/LoginServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/css/login/main.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
       </list>
     </option>
   </component>
@@ -306,12 +328,6 @@
             <path>
               <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
               <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
-              <item name="artifacts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -326,6 +342,39 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="websocket" type="462c0819:PsiDirectoryNode" />
+              <item name="handler" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
@@ -375,11 +424,38 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="index" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="com.org.taskiran" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="JAVARealTimeChat" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -397,6 +473,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -417,7 +494,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat Local">
+  <component name="RunManager" selected="Tomcat Server.Remote">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -493,7 +570,75 @@
       <properties />
       <listeners />
     </configuration>
-    <configuration name="Tomcat Local" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.5" ALTERNATIVE_JRE_ENABLED="false">
+    <configuration name="Remote" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 9.0.5" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <option name="UPDATING_POLICY" value="hot-swap-classes" />
+      <deployment>
+        <artifact name="com.org.taskiran:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="8457e22f-36ba-4e00-881f-d28063151ff1" />
+                    <id>8457e22f-36ba-4e00-881f-d28063151ff1</id>
+                  </TransportTarget>
+                </option>
+                <option name="watchedLocalPath" value="" />
+                <watched-path />
+                <name>CONTEXT_XML</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="8457e22f-36ba-4e00-881f-d28063151ff1" />
+                    <id>8457e22f-36ba-4e00-881f-d28063151ff1</id>
+                  </TransportTarget>
+                </transport-target>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <option name="stagingRemotePath" value="/" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="24ba26e5-d910-4759-9b24-176dded905a9" />
+                    <id>24ba26e5-d910-4759-9b24-176dded905a9</id>
+                  </TransportTarget>
+                </option>
+                <staging-path>/</staging-path>
+                <name>STAGING</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="24ba26e5-d910-4759-9b24-176dded905a9" />
+                    <id>24ba26e5-d910-4759-9b24-176dded905a9</id>
+                  </TransportTarget>
+                </transport-target>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" value="76970204-c4c3-4a41-901e-5ddb5bcb3ccb" />
+          <host-id>76970204-c4c3-4a41-901e-5ddb5bcb3ccb</host-id>
+        </data>
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="54951" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="com.org.taskiran:war" />
+        </option>
+      </method>
+    </configuration>
+    <configuration name="Tomcat Local" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.5" ALTERNATIVE_JRE_ENABLED="true" ALTERNATIVE_JRE_PATH="/Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="com.org.taskiran:war">
@@ -559,75 +704,6 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
-    </configuration>
-    <configuration name="Tomcat Remote" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 9.0.5" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="LOCAL" value="false" />
-      <option name="OPEN_IN_BROWSER_URL" value="http://aniltaskiran:8080/" />
-      <option name="UPDATING_POLICY" value="hot-swap-classes" />
-      <deployment>
-        <artifact name="com.org.taskiran:war">
-          <settings>
-            <option name="CONTEXT_PATH" value="/" />
-          </settings>
-        </artifact>
-      </deployment>
-      <server-settings>
-        <data>
-          <option name="targets">
-            <list>
-              <WatchedTargetModelImpl>
-                <option name="name" value="CONTEXT_XML" />
-                <option name="transportStagingTarget">
-                  <TransportTarget>
-                    <option name="id" value="26ddbb4b-030c-4be5-a964-0e803ad9a933" />
-                    <id>26ddbb4b-030c-4be5-a964-0e803ad9a933</id>
-                  </TransportTarget>
-                </option>
-                <option name="watchedLocalPath" value="" />
-                <watched-path />
-                <name>CONTEXT_XML</name>
-                <transport-target>
-                  <TransportTarget>
-                    <option name="id" value="26ddbb4b-030c-4be5-a964-0e803ad9a933" />
-                    <id>26ddbb4b-030c-4be5-a964-0e803ad9a933</id>
-                  </TransportTarget>
-                </transport-target>
-              </WatchedTargetModelImpl>
-              <StagingTargetModelImpl>
-                <option name="name" value="STAGING" />
-                <option name="stagingRemotePath" value="" />
-                <option name="transportStagingTarget">
-                  <TransportTarget>
-                    <option name="id" value="6b4c8839-c4f8-4d98-95c2-b09cd30395d7" />
-                    <id>6b4c8839-c4f8-4d98-95c2-b09cd30395d7</id>
-                  </TransportTarget>
-                </option>
-                <staging-path />
-                <name>STAGING</name>
-                <transport-target>
-                  <TransportTarget>
-                    <option name="id" value="6b4c8839-c4f8-4d98-95c2-b09cd30395d7" />
-                    <id>6b4c8839-c4f8-4d98-95c2-b09cd30395d7</id>
-                  </TransportTarget>
-                </transport-target>
-              </StagingTargetModelImpl>
-            </list>
-          </option>
-          <option name="transportHostId" value="76970204-c4c3-4a41-901e-5ddb5bcb3ccb" />
-          <host-id>76970204-c4c3-4a41-901e-5ddb5bcb3ccb</host-id>
-        </data>
-      </server-settings>
-      <predefined_log_file id="Tomcat" enabled="true" />
-      <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
-      <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="54951" />
-        <option name="LOCAL" value="false" />
-      </RunnerSettings>
-      <method>
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="com.org.taskiran:war" />
-        </option>
-      </method>
     </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.5" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="98ca6316-2f89-46d9-a9e5-fa9e2b0625b3" />
@@ -739,7 +815,7 @@
     </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Tomcat Local" />
-      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat Remote" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Remote" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
@@ -757,46 +833,47 @@
       <updated>1524154043356</updated>
       <workItem from="1524154044767" duration="15179000" />
       <workItem from="1524205030553" duration="221000" />
-      <workItem from="1524337502368" duration="40006000" />
+      <workItem from="1524337502368" duration="49008000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55406000" />
+    <option name="totallyTimeSpent" value="64408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2" y="22" width="1278" height="710" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.50647247" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.50647247" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3284553" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41788617" sideWeight="0.4935275" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.076422766" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3707317" sideWeight="0.4935275" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249191" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2249191" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -811,14 +888,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1166">
-          <caret line="53" column="3" lean-forward="false" selection-start-line="53" selection-start-column="3" selection-end-line="55" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
@@ -900,27 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/model/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-17">
-          <caret line="4" column="19" lean-forward="false" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-          <folding>
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#635#636#0" expanded="false" />
-            <element signature="e#670#671#0" expanded="false" />
-            <element signature="e#701#702#0" expanded="false" />
-            <element signature="e#741#742#0" expanded="false" />
-            <element signature="e#773#774#0" expanded="false" />
-            <element signature="e#804#805#0" expanded="false" />
-            <element signature="e#831#832#0" expanded="false" />
-            <element signature="e#881#882#0" expanded="false" />
-            <element signature="e#923#924#0" expanded="false" />
-            <element signature="e#959#960#0" expanded="false" />
-            <element signature="e#991#992#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/ReturnHashMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="440">
@@ -939,11 +987,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/images/profilePhoto.png" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/profilePhoto.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/js/functions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
@@ -955,14 +998,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/webapp/images/chatBackground.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="45" column="5" lean-forward="false" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/lib/css/emoji.css">
@@ -1020,14 +1055,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="535" column="7" lean-forward="false" selection-start-line="535" selection-start-column="7" selection-end-line="535" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login/style.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="308">
@@ -1040,30 +1067,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1219">
           <caret line="25" column="1" lean-forward="false" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="422" column="14" lean-forward="false" selection-start-line="422" selection-start-column="14" selection-end-line="422" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="67" column="22" lean-forward="false" selection-start-line="67" selection-start-column="22" selection-end-line="67" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="13" column="11" lean-forward="false" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1095,22 +1098,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/manager/JsonResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="20" column="63" lean-forward="false" selection-start-line="20" selection-start-column="63" selection-end-line="20" selection-end-column="63" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/uploadImage.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="22">
@@ -1131,14 +1118,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
           <caret line="15" column="15" lean-forward="false" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
           <folding />
         </state>
       </provider>
@@ -1167,58 +1146,150 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="90" column="23" lean-forward="false" selection-start-line="90" selection-start-column="23" selection-end-line="90" selection-end-column="23" />
+        <state relative-caret-position="264">
+          <caret line="12" column="14" lean-forward="true" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/handler/ChatEndpoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="19" lean-forward="false" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="19" />
+        <state relative-caret-position="79">
+          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/turkHack.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/images/profilePhoto.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/websocket/model/Message.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="22" lean-forward="false" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding>
+            <element signature="e#1056#1057#0" expanded="false" />
+            <element signature="e#1088#1089#0" expanded="false" />
+            <element signature="e#1119#1120#0" expanded="false" />
+            <element signature="e#1146#1147#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/index/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="62" column="16" lean-forward="false" selection-start-line="62" selection-start-column="16" selection-end-line="62" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/index/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="554" column="19" lean-forward="false" selection-start-line="554" selection-start-column="19" selection-end-line="554" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="62" column="35" lean-forward="false" selection-start-line="62" selection-start-column="35" selection-end-line="62" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/login.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="109" column="31" lean-forward="false" selection-start-line="109" selection-start-column="31" selection-end-line="109" selection-end-column="31" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#3;n#form#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handler/FileUploadServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
+        <state relative-caret-position="550">
           <caret line="40" column="39" lean-forward="false" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/handler/LoginServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="26" column="18" lean-forward="false" selection-start-line="26" selection-start-column="18" selection-end-line="26" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/handler/GetProfilePhotoServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="38" column="46" lean-forward="false" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        <state relative-caret-position="132">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/handler/RegisterServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/css/login/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="184" column="22" lean-forward="false" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/manager/JsonResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="12" column="11" lean-forward="false" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding>
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#331#332#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/manager/DBConnection.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2926">
-          <caret line="142" column="43" lean-forward="false" selection-start-line="142" selection-start-column="43" selection-end-line="142" selection-end-column="43" />
+        <state relative-caret-position="44">
+          <caret line="199" column="22" lean-forward="false" selection-start-line="199" selection-start-column="22" selection-end-line="199" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/js/login/main.js">
+    <entry file="file://$PROJECT_DIR$/src/main/java/handler/LoginServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="138" column="24" lean-forward="false" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
+        <state relative-caret-position="163">
+          <caret line="27" column="50" lean-forward="false" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1242,7 +1313,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>Web</last-edited>
+          <last-edited>Web (com.org.taskiran)|Web</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1265,7 +1336,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>9.0</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1302,7 +1373,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: javax.servlet:javax.servlet-api:3.1.0</last-edited>
+          <last-edited>Maven: javax.websocket:javax.websocket-api:1.1</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

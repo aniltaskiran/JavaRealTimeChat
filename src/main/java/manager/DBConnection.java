@@ -120,13 +120,22 @@ public class DBConnection {
         }
         return true;
     }
+    public ReturnUser getProfilePhotoWithUserID(String id){
+        System.out.println("get Profile from  id: " + id);
+        String sqlStatement = String.format("Select fullName, path from TB_PROFILE_PHOTOS where id='%s';", id);
+        return getProfileAvatar(sqlStatement);
+    }
 
     public ReturnUser getProfilePhoto(String email){
-        ReturnUser values = new ReturnUser(false, null,"","");
+        String sql = String.format("Select fullName, path from TB_PROFILE_PHOTOS where email='%s';", email);
+        System.out.println("get Profile  email: " + email);
+        return getProfileAvatar(sql);
+    }
 
+    private ReturnUser getProfileAvatar(String sqlStatement){
+        ReturnUser values = new ReturnUser(false, null,"","");
         try {
             startConnection();
-            String sqlStatement = String.format("Select fullName, path from TB_PROFILE_PHOTOS where email='%s';", email);
             statement = connection.createStatement();
             resultSet = statement.executeQuery(sqlStatement);
             values = getUserProfileData(resultSet);

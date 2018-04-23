@@ -180,7 +180,7 @@ iframe {
 
 .wrap-login100 {
   width: 370px;
-  z-index: 0;
+  z-index: 2;
   background: #fff;
   border-radius: 10px;
   overflow: hidden;

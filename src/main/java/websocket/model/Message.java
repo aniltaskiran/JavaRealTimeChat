@@ -6,6 +6,7 @@ public class Message {
     private String content;
     private String type;
     private String loginTime;
+    private String path;
 
     @Override
     public String toString() {
@@ -50,5 +51,13 @@ public class Message {
 
     public String getLoginTime() {
         return loginTime;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+    public String getPath() {
+        return path;
     }
 }

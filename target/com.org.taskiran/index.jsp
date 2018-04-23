@@ -16,6 +16,7 @@
     String userName = "";
     userName = (String) session.getAttribute("userFullName");
     String userID = (String) session.getAttribute("userID");
+    String userMail = (String) session.getAttribute("email");
     if (userName == null){
         userName = "";
     }
@@ -51,12 +52,18 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 <p id="userID" style="display: none"><%=userID%></p>
 <div class="container app">
     <div class="row app-one">
-        <div class="col-sm-4 side">
+        <div class="col-sm-4 hidden-xs side">
             <div class="side-one">
                 <div class="row heading">
                     <div class="col-sm-3 col-xs-3 heading-avatar">
                         <div class="avatar-icon">
-                            <img src="/images/profilePhoto.jpg">
+                            <%
+                            DBConnection dbConnection = new DBConnection();
+                            ReturnUser returnUser = dbConnection.getProfilePhoto(userMail);
+                            String path = returnUser.getPath();
+                            %>
+                            <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/profilePhoto.jpg';">
+
                         </div>
                     </div>
                     <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
@@ -90,7 +97,11 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                     <div class="row sideBar-body" id="pairKey_<%=pair.getKey()%>">
                         <div class="col-sm-3 col-xs-3 sideBar-avatar">
                             <div class="avatar-icon">
-                                <img src="/images/turkHack.jpg">
+                                <%
+                                    DBConnection dbConn = new DBConnection();
+                                    String onlineUserPath = dbConn.getProfilePhotoWithUserID(pair.getKey().toString()).getPath();
+                                %>
+                                <img src="<%=onlineUserPath%>" onerror="this.onerror=null;this.src='/images/turkHack.jpg';">
                             </div>
                         </div>
                         <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -120,7 +131,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             </div>
         </div>
 
-        <div class="col-sm-8 conversation">
+        <div class="col-sm-8 col-xs-12 conversation">
             <div class="row heading">
                 <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
                     <div class="avatar-icon">
