@@ -43,6 +43,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -52,7 +53,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 <p id="userID" style="display: none"><%=userID%></p>
 <div class="container app">
     <div class="row app-one">
-        <div class="col-sm-4 hidden-xs side">
+        <div class="col-sm-4 hidden-sm side">
             <div class="side-one">
                 <div class="row heading">
                     <div class="col-sm-3 col-xs-3 heading-avatar">
@@ -66,8 +67,8 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 
                         </div>
                     </div>
-                    <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
-                        <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>
+                    <div class="col-sm-2 col-xs-1  heading-dot  pull-right">
+                        <i class="fa fa-sign-out fa-2x  pull-right" aria-hidden="true" onclick="signOut()"></i>
                     </div>
                     <div class="col-sm-2 col-xs-3 heading-name">
                         <p class="heading-name-meta" id="username"><%=userName%>
@@ -94,14 +95,14 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                                 System.out.println("userID: " + userID + "as");
                                 System.out.println("pairKey:" + pair.getKey() + "as");
                     %>
-                    <div class="row sideBar-body" id="pairKey_<%=pair.getKey()%>">
+                    <div class="row sideBar-body" id="<%=pair.getKey()%>">
                         <div class="col-sm-3 col-xs-3 sideBar-avatar">
-                            <div class="avatar-icon">
+                            <div class="avatar-icon" id="pairKey">
                                 <%
                                     DBConnection dbConn = new DBConnection();
                                     String onlineUserPath = dbConn.getProfilePhotoWithUserID(pair.getKey().toString()).getPath();
                                 %>
-                                <img src="<%=onlineUserPath%>" onerror="this.onerror=null;this.src='/images/turkHack.jpg';">
+                                <img src="<%=onlineUserPath%>" onerror="this.onerror=null;this.src='/images/default-avatar.svg';" id="<%=pair.getKey()%>">
                             </div>
                         </div>
                         <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -131,11 +132,11 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
             </div>
         </div>
 
-        <div class="col-sm-8 col-xs-12 conversation">
+        <div class="col-sm-8 col-xs-12 conversation" id="rightMenu">
             <div class="row heading">
                 <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
                     <div class="avatar-icon">
-                        <img src="/images/roomPhoto.jpg">
+                        <img src="/images/roomPhoto.png">
                     </div>
                 </div>
                 <div class="col-sm-8 col-xs-7 heading-name">
@@ -143,8 +144,8 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                     </a>
                     <span class="heading-online">Online</span>
                 </div>
-                <div class="col-sm-1 col-xs-1  heading-dot pull-right">
-                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true" onclick="clearHistory()"></i>
+                <div class="col-sm-2 col-xs-1  heading-dot pull-right">
+                    <i class="fa fa-trash-o fa-2x  pull-right" aria-hidden="true" onclick="clearHistory()"></i>
                 </div>
             </div>
 

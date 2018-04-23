@@ -36,7 +36,7 @@ public class ChatEndpoint {
     @OnOpen
     public void onOpen(Session session, @PathParam("username") String username) throws IOException, EncodeException {
 
-
+        System.out.println("new connection");
         this.session = session;
         chatEndpoints.add(this);
         users.put(session.getId(), username);

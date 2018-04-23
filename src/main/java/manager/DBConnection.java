@@ -25,10 +25,10 @@ public class DBConnection {
         ID,FULLNAME,PATH;
     }
     private  String jdbcDriverStr = "com.mysql.jdbc.Driver";
-    private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat";
+    private  String jdbcURL = "jdbc:mysql://localhost:3306/realTimeChat?useUnicode=true&characterEncoding=UTF-8";
     private  String localHostUser = "root";
     private  String localHostPassword = "";
-    private  String remoteHostUser = "kev";
+    private  String remoteHostUser = "jkglj";
     private  String remoteHostPassword = "a8f38f726da3c612cf9dfd0a2aa686425c6919367b0bf6c2";
 
     private Connection connection;
@@ -38,7 +38,7 @@ public class DBConnection {
     private void startConnection(){
         try {
             Class.forName(jdbcDriverStr);
-            connection = DriverManager.getConnection(jdbcURL,localHostUser,localHostPassword);
+            connection = DriverManager.getConnection(jdbcURL,remoteHostUser,remoteHostPassword);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -55,6 +55,9 @@ public class DBConnection {
     }
 
     public Boolean savePhoto(ReturnFileUploadData values, String path){
+        if (path == null){
+            path = "/images/default-avatar.svg";
+        }
         try {
             startConnection();
             String sqlStatement = String.format("REPLACE INTO " + DB_TABLE_NAMES.TB_PROFILE_PHOTOS.toString() +" values ('%s','%s','%s','%s');", values.getId(), values.getEmail(), values.getFullName(), path);

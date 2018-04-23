@@ -25,7 +25,7 @@
                 } else {
                     %>
                     <div class="alert alert-danger">
-                        <p style="text-align: center; font-size: large;"><strong>Danger!</strong> Indicates a dangerous or potentially negative action.</p>
+                        <p style="text-align: center; font-size: large;"><strong>Warning!</strong> Your mail or password is wrong.</p>
 </div>
     <%
                 }
@@ -80,7 +80,7 @@
                 </span>
 
                 <div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-                    <input class="input100" type="text" id="email" name="email" autocomplete="email" value=<%=email%>>
+                    <input class="input100" type="text" id="email" name="email" autocomplete="email">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
