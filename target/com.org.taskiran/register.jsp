@@ -48,7 +48,7 @@
 <!-- particles.js container -->
 <div id="particles-js"></div>
 <div id="loader" style="display: none"></div>
-<div class="alert alert-success" id="alert-success" style="display: none">
+<div class="alert alert-success" id="alert-success" style="display: none; z-index: 500;">
    <p style="text-align: center; font-size: large;"><strong>Success!</strong> You are redirected to login page.</p>
 </div>
 <!-- cd-popup -->

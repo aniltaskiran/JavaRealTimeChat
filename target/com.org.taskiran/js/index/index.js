@@ -180,7 +180,7 @@ function connect() {
     var host = document.location.host;
     var pathname = document.location.pathname;
 
-    ws = new WebSocket("ws://" + host + "/chat/" + username);
+    ws = new WebSocket("wss://" + host + "/chat/" + username);
     sendUserID();
     ws.onmessage = function(event) {
         // var log = document.getElementById("log");
@@ -208,8 +208,9 @@ function send() {
         var json = JSON.stringify({
             "content":content,
             "senderID":userID,
-            "type":"addMessage"
-        });
+            "type":"addMessage",
+            "path":document.getElementById("profile-photo").src
+    });
         ws.send(json);
         document.getElementById("comment").value = "";
     }
@@ -223,8 +224,9 @@ function sendUserID(){
 
         var json = JSON.stringify({
             "senderID":userID,
-            "type":"addNewUser"
-        });
+            "type":"addNewUser",
+            "path":document.getElementById("profile-photo").src
+    });
         ws.send(json);
     });
 }

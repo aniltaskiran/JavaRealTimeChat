@@ -7,6 +7,7 @@ import model.User;
 import websocket.model.Message;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -15,6 +16,7 @@ import java.util.Set;
 
 import java.util.concurrent.CopyOnWriteArraySet;
 
+import javax.net.ssl.SSLContext;
 import javax.websocket.EncodeException;
 import javax.websocket.OnClose;
 import javax.websocket.OnError;
@@ -34,7 +36,7 @@ public class ChatEndpoint {
     private static HashMap<String, String> userToUserID = new HashMap<>();
 
     @OnOpen
-    public void onOpen(Session session, @PathParam("username") String username) throws IOException, EncodeException {
+    public void onOpen(Session session, @PathParam("username") String username) throws IOException, EncodeException, NoSuchAlgorithmException {
 
         System.out.println("new connection");
         this.session = session;
@@ -97,6 +99,7 @@ public class ChatEndpoint {
 
     @OnError
     public void onError(Session session, Throwable throwable) {
+        System.out.println("error chat point.");
         // Do error handling here
     }
 

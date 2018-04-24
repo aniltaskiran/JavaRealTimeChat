@@ -66,7 +66,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                             ReturnUser returnUser = dbConnection.getProfilePhoto(userMail);
                             String path = returnUser.getPath();
                             %>
-                            <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/default-avatar.svg';">
+                            <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/default-avatar.svg';" id="profile-photo">
 
                         </div>
                     </div>
