@@ -224,8 +224,7 @@ function sendUserID(){
 
         var json = JSON.stringify({
             "senderID":userID,
-            "type":"addNewUser",
-            "path":document.getElementById("profile-photo").src
+            "type":"addNewUser"
     });
         ws.send(json);
     });

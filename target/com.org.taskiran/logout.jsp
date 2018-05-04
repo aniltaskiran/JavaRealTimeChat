@@ -6,8 +6,14 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%
-    session.setAttribute("userID", null);
-    session.setAttribute("userName", null);
     session.invalidate();
+
+    for (Cookie cookie : request.getCookies()) {
+        cookie.setValue("");
+        cookie.setMaxAge(0);
+        cookie.setPath("/");
+
+        response.addCookie(cookie);
+    }
     response.sendRedirect("login.jsp");
 %>

@@ -1,4 +1,4 @@
-<%@ page import="java.util.ArrayList" %>
+        <%@ page import="java.util.ArrayList" %>
 <%@ page import="manager.DBConnection" %>
 <%@ page import="model.ReturnUser" %>
 <%@ page import="model.ReturnHashMap" %>
@@ -13,26 +13,43 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 <%
-    String userName = "";
-    userName = (String) session.getAttribute("userFullName");
-    String userID = (String) session.getAttribute("userID");
-    String userMail = (String) session.getAttribute("email");
-    if (userName == null){
+
+    String userName = null;
+    String userMail = null;
+
+    String userID = null;
+
+    if (userName == null) {
         userName = "";
     }
 
-if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") == "")) {
+
+    Cookie[] cookies = request.getCookies();
+    if (cookies != null) {
+        for (int i = 0; i < cookies.length; i++) {
+            Cookie c = cookies[i];
+
+            if (c.getName().equals("userID")) {
+                userID = c.getValue();
+            }
+        }
+    }
+
+    if ((userID == null)) {
         response.sendRedirect("/login.jsp");
         return;
-} else {
-    userID = userID.trim();
-}
+    } else {
+        userID = userID.trim();
+    }
+
+    DBConnection dbConnection = new DBConnection();
+    ReturnUser returnUser = dbConnection.getProfilePhotoWithUserID(userID);
+    userName = returnUser.getFullName();
 %>
 <!DOCTYPE html>
 <html>
 <head>
     <title>Chat</title>
-    <script type="text/javascript" src="version?n=<%=Math.random()*100 + 1%>"></script>
 
     <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 
@@ -48,7 +65,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/push.js/0.0.11/push.min.js"></script>
 
-
+    <link rel="icon" type="image/png" href="images/icons/chat.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="/css/index/index.css">
 </head>
@@ -62,9 +79,7 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                     <div class="col-sm-2 col-xs-3 heading-avatar">
                         <div class="avatar-icon">
                             <%
-                            DBConnection dbConnection = new DBConnection();
-                            ReturnUser returnUser = dbConnection.getProfilePhoto(userMail);
-                            String path = returnUser.getPath();
+                                String path = returnUser.getPath();
                             %>
                             <img src="<%=path%>"  onerror="this.onerror=null;this.src='/images/default-avatar.svg';" id="profile-photo">
 
@@ -92,9 +107,9 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
 
                         Iterator it = values.getiDToName().entrySet().iterator();
                         while (it.hasNext()) {
-                            Map.Entry pair = (Map.Entry)it.next();
+                            Map.Entry pair = (Map.Entry) it.next();
 
-                            if (!pair.getKey().toString().contains(userID)){
+                            if (!pair.getKey().toString().contains(userID)) {
                                 System.out.println("userID: " + userID + "as");
                                 System.out.println("pairKey:" + pair.getKey() + "as");
                     %>
@@ -105,7 +120,8 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                                     DBConnection dbConn = new DBConnection();
                                     String onlineUserPath = dbConn.getProfilePhotoWithUserID(pair.getKey().toString()).getPath();
                                 %>
-                                <img src="<%=onlineUserPath%>" onerror="this.onerror=null;this.src='/images/default-avatar.svg';" id="<%=pair.getKey()%>">
+                                <img src="<%=onlineUserPath%>
+                        " onerror="this.onerror=null;this.src='/images/default-avatar.svg';" id="<%=pair.getKey()%>">
                             </div>
                         </div>
                         <div class="col-sm-9 col-xs-9 sideBar-main">
@@ -125,8 +141,8 @@ if ((session.getAttribute("userID") == null) || (session.getAttribute("userID") 
                         </div>
                     </div>
                     <%
-                            it.remove(); // avoids a ConcurrentModificationException
-                        }
+                                it.remove(); // avoids a ConcurrentModificationException
+                            }
 
                         }
                     %>

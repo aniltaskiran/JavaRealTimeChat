@@ -10,6 +10,7 @@ import model.User;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,9 +42,11 @@ public class LoginServlet extends HttpServlet {
         try {
             ReturnUser result = dao.loginAccountControl(usr);
             req.setAttribute("result", result.getResponse());
-            req.setAttribute("userID", result.getId());
-            req.setAttribute("userFullName",result.getFullName());
-            req.setAttribute("email",usr.getEmail());
+
+            Cookie userID = new Cookie("userID", result.getId());
+            //seconds
+            userID.setMaxAge(60*60*24*30);
+            resp.addCookie(userID);
 
             dao.saveIPAddr(req.getRemoteAddr(),result.getId());
 
